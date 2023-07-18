@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.util.SparseArray" />
+
+        <import type="java.util.Map" />
+
+        <import type="java.util.List" />
+
+        <variable
+            name="list"
+            type="List&lt;String>" />
+
+        <variable
+            name="sparse"
+            type="SparseArray&lt;String>" />
+
+        <variable
+            name="map"
+            type="Map&lt;String, String>" />
+
+        <variable
+            name="index"
+            type="int" />
+
+        <variable
+            name="message"
+            type="String" />
+
+        <variable
+            name="title"
+            type="String" />
+
+        <variable
+            name="viewModel"
+            type="kell.com.example.vaanh.FragmentLogIn" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple"
+        tools:context=".FragmentLogIn">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> viewModel.onClickChange()}"
+            android:text="Change"
+            app:layout_constraintBottom_toTopOf="@+id/tv_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Change" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:text="@{message}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Message" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+    <!--            android:onClick="@{() -> User.show()}"-->
+    <!--            android:onClick="@show"-->
+    <!--            android:onClick="@{User::show}"-->
+    <!--    Note: For the XML to be syntactically correct, you have to escape the < characters.
+    For example: instead of List<String> you have to write List&lt;String>.-->
+
+
+    <!--…
+    android:text="@{list[index]}"
+    …
+    android:text="@{sparse[index]}"
+    …
+    android:text="@{map[key]}"
+     @{map.key}.
+
+android:text='@{map["firstName"]}'
+     android:text="@{map[`firstName`]}"
+     -->
+    <!--        <include layout="@layout/fragment_sign_up"
+                bind:user="@{user}"/>-->

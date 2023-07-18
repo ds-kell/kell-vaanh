@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">VaANH</string>
+    <string name="sign_in">Sign in</string>
+    <string name="username">username</string>
+    <string name="password">password</string>
+    <string name="login_with_gg">LoginWithGoogle</string>
+    <string name="login_with_fb">Login with facebook</string>
+    <string name="btn_login">Login</string>
+    <string name="raiden_shogun">Raiden Shogun</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="register">Register</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
