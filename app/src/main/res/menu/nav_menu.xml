@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu>
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/fragmentSignUp"
+        android:icon="@drawable/icons8_google"
+        android:title="Frag1"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/fragmentLogIn"
+        android:icon="@drawable/icons8_facebook"
+        android:title="Frag2"
+        app:showAsAction="ifRoom" />
 </menu>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="kell.com.example.vaanh.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_fragmentLogIn"
+            app:destination="@id/fragmentLogIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentLogIn"
+        android:name="kell.com.example.vaanh.FragmentLogIn"
+        android:label="FragmentLogIn"
+        tools:layout="@layout/fragment_log_in">
+
+        <action
+            android:id="@+id/action_fragmentLogIn_to_fragmentSignUp"
+            app:destination="@id/fragmentSignUp" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSignUp"
+        android:name="kell.com.example.vaanh.FragmentSignUp"
+        android:label="FragmentSignUp"
+        tools:layout="@layout/fragment_sign_up">
+
+        <action
+            android:id="@+id/action_fragmentSignUp_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
