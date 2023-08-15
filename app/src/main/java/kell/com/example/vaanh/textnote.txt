@@ -1,0 +1,25 @@
+Giữ trạng thái UI (UI State Management): ViewModel giữ các dữ liệu và trạng thái liên quan đến giao diện người dùng. Nó là một lớp tồn tại trong suốt vòng đời của Activity hoặc Fragment, giúp lưu trữ và duy trì dữ liệu khi thiết bị xoay màn hình, hoạt động bị hủy và tạo lại.
+
+Tách biệt dữ liệu và giao diện người dùng (Separation of Concerns): ViewModel giúp tách biệt logic xử lý dữ liệu (business logic) khỏi giao diện người dùng. Điều này giúp giữ cho Activity và Fragment chỉ tập trung vào việc hiển thị UI và giao tiếp với ViewModel để nhận dữ liệu cần thiết.
+
+Tránh mất dữ liệu (Data Retention): ViewModel được tạo lại chỉ khi hoạt động hoàn toàn bị hủy, chẳng hạn như khi người dùng thoát khỏi ứng dụng. Điều này giúp tránh mất dữ liệu khi ứng dụng bị hủy và tạo lại sau đó.
+
+Đơn giản hóa quản lý trạng thái UI: ViewModel giúp quản lý các trạng thái khác nhau của giao diện người dùng, chẳng hạn như trạng thái tải dữ liệu, trạng thái lỗi, v.v. Điều này giúp giảm phức tạp của giao diện người dùng và giúp việc quản lý trạng thái trở nên dễ dàng hơn.
+
+Cung cấp dữ liệu cho giao diện người dùng: ViewModel cung cấp dữ liệu từ Model (hoặc Repository) để hiển thị trong giao diện người dùng. Nó cũng có thể thực hiện các yêu cầu từ giao diện để cập nhật dữ liệu trong Model hoặc thực hiện các tác vụ liên quan khác.
+
+Tích hợp với LiveData hoặc Flow: ViewModel thường sử dụng LiveData hoặc Flow để thông báo về sự thay đổi dữ liệu cho giao diện người dùng. Điều này giúp đồng bộ hóa dữ liệu giữa ViewModel và giao diện người dùng một cách tự động.
+
+
+
+
+Tính năng uỷ quyền thuộc tính của Kotlin
+Trong Kotlin, mỗi thuộc tính có thể biến đổi (var) đều có các hàm getter và setter mặc định được tạo tự động cho mỗi thuộc tính. Hàm setter và getter được gọi khi bạn gán giá trị hoặc đọc giá trị của thuộc tính.
+
+Đối với thuộc tính chỉ đọc (val), các hàm này hơi khác với thuộc tính có thể biến đổi. Chỉ có hàm getter được tạo theo mặc định. Hàm getter này được gọi khi bạn đọc giá trị của thuộc tính chỉ đọc.
+
+Tính năng uỷ quyền thuộc tính trong Kotlin giúp bạn chuyển giao trách nhiệm của hàm getter-setter cho một lớp khác.
+
+Lớp này (được gọi là lớp uỷ quyền (delegate class)) cung cấp các hàm getter và setter của thuộc tính đó và xử lý các thay đổi trên thuộc tính đó.
+
+Từng thuộc tính uỷ quyền được định nghĩa bằng mệnh đề by và một thực thể của lớp uỷ quyền:

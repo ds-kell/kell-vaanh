@@ -7,29 +7,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/blue"
-        tools:context=".FragmentSignUp">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_back_to_frag2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_to_home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="To home"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".view.ui.FragmentSignUp">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_message_2"
+            android:id="@+id/tv_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign up"
+            android:text="message"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -1,111 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <data>
-
-        <import type="android.util.SparseArray" />
-
-        <import type="java.util.Map" />
-
-        <import type="java.util.List" />
-
-        <variable
-            name="list"
-            type="List&lt;String>" />
-
-        <variable
-            name="sparse"
-            type="SparseArray&lt;String>" />
-
-        <variable
-            name="map"
-            type="Map&lt;String, String>" />
-
-        <variable
-            name="index"
-            type="int" />
-
-        <variable
-            name="message"
-            type="String" />
-
-        <variable
-            name="title"
-            type="String" />
-
-        <variable
-            name="viewModel"
-            type="kell.com.example.vaanh.FragmentLogIn" />
-    </data>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/purple"
-        tools:context=".FragmentLogIn">
+        android:orientation="vertical">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_change"
+        <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewModel.onClickChange()}"
-            android:text="Change"
-            app:layout_constraintBottom_toTopOf="@+id/tv_message"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Change" />
+            android:adjustViewBounds="true"
+            android:src="@drawable/raiden_bg2" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_message"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{message}"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Message" />
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textSize="50sp"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/icons_user"
+            android:hint="@string/username"
+            android:padding="8dp" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/round_border"
+            android:drawableStart="@drawable/icons_passwords"
+            android:hint="@string/password"
+            android:padding="8dp" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/register"
+                android:textStyle="bold"
+                android:textColor="@color/blue" />
+
+            <TextView
+                android:id="@+id/forgotPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/forgot_password"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_back_to_home"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnSigIn"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/button_bg"
+            android:shadowRadius="@integer/material_motion_duration_medium_1"
+            android:text="@string/btn_login"
+            android:textStyle="bold" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_frag1_to_frag2"
-            android:layout_width="wrap_content"
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fragment 2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/login_with_gg"
+
+                android:src="@drawable/icons8_google" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/login_with_fb"
+
+                android:src="@drawable/icons8_facebook" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>
-
-    <!--            android:onClick="@{() -> User.show()}"-->
-    <!--            android:onClick="@show"-->
-    <!--            android:onClick="@{User::show}"-->
-    <!--    Note: For the XML to be syntactically correct, you have to escape the < characters.
-    For example: instead of List<String> you have to write List&lt;String>.-->
-
-
-    <!--…
-    android:text="@{list[index]}"
-    …
-    android:text="@{sparse[index]}"
-    …
-    android:text="@{map[key]}"
-     @{map.key}.
-
-android:text='@{map["firstName"]}'
-     android:text="@{map[`firstName`]}"
-     -->
-    <!--        <include layout="@layout/fragment_sign_up"
-                bind:user="@{user}"/>-->
