@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.text.InputType" />
+
+        <import type="android.view.inputmethod.EditorInfo" />
+
+        <variable
+            name="vm"
+            type="kell.com.example.vaanh.ui.authentication.login.contract.LoginContract" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_medium"
+            android:layout_marginTop="@dimen/space_extra"
+            android:background="@android:color/transparent"
+            android:hint="@string/username"
+            app:contentMaxLength="@{255}"
+            app:contentMaxLines="@{1}"
+            app:valueContent="@{vm.username}" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_medium"
+            android:layout_marginVertical="@dimen/space_medium"
+            android:background="@android:color/transparent"
+            android:hint="@string/password"
+            app:contentInputType="@{InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD}"
+            app:contentMaxLength="@{255}"
+            app:contentMaxLines="@{1}"
+            app:valueContent="@{vm.password}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{_->vm.onSubmit()}"
+            android:text="@string/login" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/fragment_login">
+    <fragment
+        android:id="@+id/fragment_login"
+        android:name="kell.com.example.vaanh.ui.authentication.login.LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/to_home"
+            app:destination="@+id/fragment_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="kell.com.example.vaanh.ui.home.FragmentHome"
+        tools:layout="@layout/fragment_home">
+        <argument />
+    </fragment>
 </navigation>
