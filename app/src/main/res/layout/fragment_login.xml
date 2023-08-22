@@ -10,7 +10,7 @@
 
         <variable
             name="vm"
-            type="kell.com.example.vaanh.ui.authentication.login.contract.LoginContract" />
+            type="kell.com.example.vaanh.ui.authentication.login.contract.LoginViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -19,6 +19,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_username"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,14 +27,17 @@
             android:layout_marginTop="@dimen/space_extra"
             android:background="@android:color/transparent"
             android:hint="@string/username"
+            android:text="@={vm.username}"
             app:contentMaxLength="@{255}"
             app:contentMaxLines="@{1}"
             app:valueContent="@{vm.username}" />
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@={vm.password}"
             android:layout_marginHorizontal="@dimen/space_medium"
             android:layout_marginVertical="@dimen/space_medium"
             android:background="@android:color/transparent"
