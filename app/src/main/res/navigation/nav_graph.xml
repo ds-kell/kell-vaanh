@@ -11,11 +11,24 @@
         <action
             android:id="@+id/to_home"
             app:destination="@+id/fragment_home" />
+        <action
+            android:id="@+id/to_sign_up"
+            app:destination="@+id/fragment_sign_up" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_sign_up"
+        android:name="kell.com.example.vaanh.ui.authentication.signup.SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/to_login"
+            app:destination="@+id/fragment_login" />
     </fragment>
     <fragment
         android:id="@+id/fragment_home"
-        android:name="kell.com.example.vaanh.ui.home.FragmentHome"
+        android:name="kell.com.example.vaanh.ui.home.HomeFragment"
         tools:layout="@layout/fragment_home">
-        <argument />
+        <argument
+            android:name="username"
+            app:argType="string" />
     </fragment>
 </navigation>

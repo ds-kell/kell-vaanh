@@ -23,3 +23,12 @@ Tính năng uỷ quyền thuộc tính trong Kotlin giúp bạn chuyển giao tr
 Lớp này (được gọi là lớp uỷ quyền (delegate class)) cung cấp các hàm getter và setter của thuộc tính đó và xử lý các thay đổi trên thuộc tính đó.
 
 Từng thuộc tính uỷ quyền được định nghĩa bằng mệnh đề by và một thực thể của lớp uỷ quyền:
+
+khi thêm `@HiltAndroidApp` vào lớp `Application` Hilt sẽ tự động khởi tạo các module được cung cấp bởi `@InstallIn` trong `SingletonComponent`.
+
+
+`RetrofitModule` sẽ được Hilt cung cấp bằng cách sử dụng `@Provides` và `@Singleton` annotation trong module đó.
+
+Điều này đảm bảo rằng khi yêu cầu `Retrofit` hoặc `ApiService` trong các lớp, ViewModel, hoặc bất kỳ đối tượng nào được đánh dấu với `@Inject`,
+Hilt sẽ cung cấp các phiên bản đã được cấu hình của chúng.
+

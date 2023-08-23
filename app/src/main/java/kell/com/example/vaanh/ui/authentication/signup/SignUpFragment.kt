@@ -1,4 +1,4 @@
-package kell.com.example.vaanh.ui.authentication.login
+package kell.com.example.vaanh.ui.authentication.signup
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,29 +9,30 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kell.com.example.vaanh.R
-import kell.com.example.vaanh.databinding.FragmentLoginBinding
-import kell.com.example.vaanh.ui.authentication.login.contract.LogInViewModel
+import kell.com.example.vaanh.databinding.FragmentSignUpBinding
+import kell.com.example.vaanh.ui.authentication.login.LoginFragmentDirections
+import kell.com.example.vaanh.ui.authentication.signup.contract.SignUpViewModel
 
 @AndroidEntryPoint
-class LoginFragment : Fragment() {
-    private val viewModel: LogInViewModel by viewModels()
+class SignUpFragment : Fragment() {
+    private val viewModel: SignUpViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return FragmentLoginBinding.inflate(inflater, container, false).apply {
-            lifecycleOwner = this@LoginFragment
+        return FragmentSignUpBinding.inflate(inflater, container, false).apply {
+            lifecycleOwner = this@SignUpFragment
             vm = viewModel
+            tvLogin.setOnClickListener {
+                findNavController().navigate(R.id.fragment_login)
+            }
             btnSubmit.setOnClickListener {
                 viewModel.onSubmit(toHome = {
                     findNavController().navigate(LoginFragmentDirections.toHome(it))
                 })
             }
-            tvSignup.setOnClickListener {
-                findNavController().navigate(R.id.fragment_sign_up)
-            }
+            viewModel.doSomething()
         }.root
     }
-
 }

@@ -4,7 +4,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kell.com.example.vaanh.interator.LoginUseCase
 import kell.com.example.vaanh.repository.VaAnhRepository
 import kell.com.example.vaanh.repository.impl.VaAnhRepositoryImpl
 import kell.com.example.vaanh.repository.service.VaAnhApiService
@@ -17,22 +16,15 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object VaAnhModule {
-    private const val BASE_URL = "http://localhost:8088/api/"
+    private const val BASE_URL = "http://10.0.2.2:8088/api/"
 
     @Singleton
     @Provides
-    fun providesHttpLoggingInterceptor() = HttpLoggingInterceptor()
-        .apply {
+    fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
+        .addInterceptor(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
-        }
-
-    @Singleton
-    @Provides
-    fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
-        OkHttpClient
-            .Builder()
-            .addInterceptor(httpLoggingInterceptor)
-            .build()
+        })
+        .build()
 
     @Singleton
     @Provides
@@ -49,10 +41,7 @@ object VaAnhModule {
 
     @Singleton
     @Provides
-    fun providesRepository(vaAnhApiService: VaAnhApiService) = VaAnhRepositoryImpl(vaAnhApiService)
-
-    @Singleton
-    @Provides
-    fun provideLoginUseCase(repository: VaAnhRepository): LoginUseCase =
-        LoginUseCase(repository)
+    fun provideVaAnhRepository(apiService: VaAnhApiService): VaAnhRepository {
+        return VaAnhRepositoryImpl(apiService)
+    }
 }

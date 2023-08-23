@@ -3,21 +3,94 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+        <import type="android.text.InputType" />
+
+        <import type="android.view.inputmethod.EditorInfo" />
+
+        <variable
+            name="vm"
+            type="kell.com.example.vaanh.ui.authentication.signup.contract.SignUpViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blue"
-        tools:context=".view.ui.FragmentSignUp">
+        android:orientation="vertical"
+        tools:context="kell.com.example.vaanh.ui.authentication.signup.SignUpFragment">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tv_message"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_phone_number"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_medium"
+            android:layout_marginTop="@dimen/space_extra"
+            android:layout_marginBottom="@dimen/space_medium"
+            android:hint="@string/phone_or_email"
+            android:text="@={vm.email}" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_medium"
+            android:layout_marginVertical="@dimen/space_medium"
+            android:hint="@string/username"
+            android:text="@={vm.username}" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/space_medium"
+                android:layout_marginVertical="@dimen/space_medium"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:text="@={vm.password}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_forgot_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/forgot_password"
+                android:textColor="@color/blue" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_login"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/have_account"
+                android:textColor="@color/blue" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="message"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_large"
+            android:paddingHorizontal="@dimen/space_extra"
+            android:text="@string/sign_up" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="username"
+            type="String" />
 
     </data>
 
@@ -13,6 +16,14 @@
         android:orientation="vertical"
         tools:context=".view.ui.HomeFragment">
 
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_extra"
+            android:gravity="center_horizontal"
+            android:paddingVertical="@dimen/space_medium"
+            android:text="@{username}"
+            tools:text="@string/username" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

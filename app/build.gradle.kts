@@ -2,9 +2,11 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
+    id("kotlin-parcelize")
     id("com.google.devtools.ksp")
+    id("androidx.navigation.safeargs.kotlin")
 }
-
 android {
     namespace = "kell.com.example.vaanh"
     compileSdk = 34
@@ -41,12 +43,16 @@ android {
     sourceSets {
 
     }
+    kapt {
+        generateStubs = true
+    }
 }
 
 dependencies {
 //    core
     implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.activity:activity-ktx:1.7.2")
 //    material
     implementation("com.google.android.material:material:1.11.0-alpha02")
     implementation("androidx.compose.material3:material3:1.2.0-alpha05")
@@ -73,6 +79,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:okhttp:4.10.0")
+    implementation("com.google.code.gson:gson:2.10.1")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 //
     implementation("com.google.dagger:hilt-android:2.47")
@@ -81,6 +88,14 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 //
-    implementation("com.jakewharton.timber:timber:5.0.1")
-
+//    implementation("com.jakewharton.timber:timber:5.0.1")
+// Room components
+    implementation("androidx.room:room-ktx:2.5.2")
+    implementation("androidx.room:room-common:2.5.2")
+    ksp("androidx.room:room-compiler:2.5.2")
+//
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
+//
+    implementation("com.google.firebase:firebase-storage:20.2.1")
 }
