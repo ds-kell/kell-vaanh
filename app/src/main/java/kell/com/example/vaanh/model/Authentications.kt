@@ -5,13 +5,8 @@ data class AuthenticationRequest(
     val password: String,
 )
 
+
 data class AuthenticationResponse(
-    val message: String,
-    val data: AuthenticationResponseData
-)
-
-
-data class AuthenticationResponseData(
     val token: String,
     val type: String,
     val username: String,
@@ -19,12 +14,12 @@ data class AuthenticationResponseData(
 )
 
 
-data class UserProfile(
-    val username: String,
-    val dob: Long,
+data class AccountProfile(
     val fullName: String,
-    val gender: String,
     val phoneNumber: String,
+    val dob: String,
+    val gender: String,
+    val avatarUrl: String
 )
 
 data class SignUpRequest(
@@ -37,4 +32,7 @@ data class SignUpResponse(
     val message: String,
 )
 
-data class ResponseUtil(val message: String)
+data class ResponseUtil<T>(
+    val message: String,
+    val data: T,
+)

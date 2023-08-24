@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kell.com.example.vaanh.R
 import kell.com.example.vaanh.databinding.FragmentSignUpBinding
-import kell.com.example.vaanh.ui.authentication.login.LoginFragmentDirections
 import kell.com.example.vaanh.ui.authentication.signup.contract.SignUpViewModel
 
 @AndroidEntryPoint
@@ -29,7 +28,6 @@ class SignUpFragment : Fragment() {
             }
             btnSubmit.setOnClickListener {
                 viewModel.onSubmit(toHome = {
-                    findNavController().navigate(LoginFragmentDirections.toHome(it))
                 })
             }
             viewModel.doSomething()

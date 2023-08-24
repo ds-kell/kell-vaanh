@@ -1,7 +1,9 @@
 <resources>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="login">Login</string>
+    <!--    app-->
     <string name="app_name">VaANH</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--    Auth-->
+    <string name="login">Login</string>
     <string name="sign_up">Sign Up</string>
     <string name="dont_have_account">Don"'"t have account? Sign Up</string>
     <string name="have_account">Have account? Log In</string>
@@ -9,12 +11,16 @@
     <string name="password">Password</string>
     <string name="login_with_gg">LoginWithGoogle</string>
     <string name="login_with_fb">Login with facebook</string>
-    <string name="btn_login">Login</string>
     <string name="forgot_password">Forgot password</string>
-    <string name="phone_number">Phone number</string>
+    <string name="login_failed">Username or password is invalid!</string>
     <string name="phone_or_email">Phone number/Email address</string>
+    <!--    profile-->
+    <string name="phone_number">Phone number</string>
     <string name="full_name">Full name</string>
     <string name="dob">Date of Birth</string>
+    <string name="view_profile">View profile</string>
+    <string name="update_profile">Update profile</string>
+
 
     <string name="gender">Gender</string>
 </resources>

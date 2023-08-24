@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="kell.com.example.vaanh.ui.user_profile.contract.AccountProfileViewModel" />
+
+        <variable
+            name="accountProfile"
+            type="kell.com.example.vaanh.model.AccountProfile" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_full_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_medium"
+            android:layout_marginVertical="@dimen/space_medium"
+            android:background="@android:color/transparent"
+            android:enabled="@{vm.isUpdate()}"
+            android:paddingHorizontal="@dimen/space_medium"
+            android:paddingVertical="@dimen/space_small"
+            android:text="@{accountProfile.fullName}"
+            tools:text="@string/full_name" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_dob"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_medium"
+            android:layout_marginVertical="@dimen/space_medium"
+            android:background="@android:color/transparent"
+            android:enabled="@{vm.isUpdate()}"
+            android:paddingHorizontal="@dimen/space_medium"
+            android:paddingVertical="@dimen/space_small"
+            android:text="@{accountProfile.dob}"
+            tools:text="@string/dob" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_phone_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_medium"
+            android:layout_marginVertical="@dimen/space_medium"
+            android:background="@android:color/transparent"
+            android:enabled="@{vm.isUpdate()}"
+            android:paddingHorizontal="@dimen/space_medium"
+            android:paddingVertical="@dimen/space_small"
+            android:text="@{accountProfile.phoneNumber}"
+            tools:text="@string/phone_number" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space_large"
+            tools:src="@drawable/icons8_facebook" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_update_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space_medium"
+            android:text="@string/update_profile"
+            app:backgroundTint="@color/blue" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

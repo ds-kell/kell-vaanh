@@ -1,12 +1,16 @@
 package kell.com.example.vaanh.injection.module
 
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kell.com.example.vaanh.interceptor.HeaderInterceptor
 import kell.com.example.vaanh.repository.VaAnhRepository
 import kell.com.example.vaanh.repository.impl.VaAnhRepositoryImpl
 import kell.com.example.vaanh.repository.service.VaAnhApiService
+import kell.com.example.vaanh.utils.SessionManager
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -20,7 +24,10 @@ object VaAnhModule {
 
     @Singleton
     @Provides
-    fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
+    fun provideOkHttpClient(
+        headerInterceptor: HeaderInterceptor,
+    ): OkHttpClient = OkHttpClient.Builder()
+        .addInterceptor(headerInterceptor)
         .addInterceptor(HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
         })
@@ -44,4 +51,14 @@ object VaAnhModule {
     fun provideVaAnhRepository(apiService: VaAnhApiService): VaAnhRepository {
         return VaAnhRepositoryImpl(apiService)
     }
+
+    @Singleton
+    @Provides
+    fun provideSessionManager(@ApplicationContext context: Context): SessionManager =
+        SessionManager(context)
+
+    @Singleton
+    @Provides
+    fun provideHeaderInterceptor(sessionManager: SessionManager): HeaderInterceptor =
+        HeaderInterceptor(sessionManager)
 }

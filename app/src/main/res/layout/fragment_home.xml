@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".view.ui.HomeFragment">
+        tools:context="kell.com.example.vaanh.ui.home.HomeFragment">
 
         <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
@@ -23,7 +23,15 @@
             android:gravity="center_horizontal"
             android:paddingVertical="@dimen/space_medium"
             android:text="@{username}"
+            android:textSize="@dimen/font_large"
             tools:text="@string/username" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_view_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space_medium"
+            android:text="@string/view_profile" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

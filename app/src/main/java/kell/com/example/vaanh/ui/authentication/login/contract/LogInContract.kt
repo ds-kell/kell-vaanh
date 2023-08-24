@@ -9,5 +9,6 @@ interface LogInContract {
     fun setEmail(email: String)
     fun getUsername(): StateFlow<String>
     fun getPassword(): StateFlow<String>
+    fun getMessage(): StateFlow<String>
     fun getEmail(): StateFlow<String>
 }
