@@ -57,7 +57,7 @@
             android:text="@{accountProfile.phoneNumber}"
             tools:text="@string/phone_number" />
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

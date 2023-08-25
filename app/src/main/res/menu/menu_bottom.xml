@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/fragment_home"
+        android:title="@string/home"
         android:icon="@drawable/baseline_home_24"
-        android:title="Home"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/fragmentLogIn"
-        android:icon="@drawable/baseline_insert_photo_24"
-        android:title="Frag1"
+        android:icon="@drawable/baseline_add_shopping_cart_24"
+        android:title="@string/cart"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/fragmentSignUp"
-        android:icon="@drawable/baseline_mode_edit_24"
-        android:title="Frag2"
+        android:id="@+id/fragment_user_profile"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="@string/view_profile"
         app:showAsAction="ifRoom" />
 </menu>

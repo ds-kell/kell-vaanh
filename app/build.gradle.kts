@@ -89,7 +89,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 //
 //    implementation("com.jakewharton.timber:timber:5.0.1")
-// Room components
+//  Room components
     implementation("androidx.room:room-ktx:2.5.2")
     implementation("androidx.room:room-common:2.5.2")
     ksp("androidx.room:room-compiler:2.5.2")
@@ -98,4 +98,6 @@ dependencies {
     annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
 //
     implementation("com.google.firebase:firebase-storage:20.2.1")
+//
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 }

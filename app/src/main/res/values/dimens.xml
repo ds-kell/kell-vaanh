@@ -3,12 +3,16 @@
     <!--    -->
     <dimen name="space_small">5dp</dimen>
     <dimen name="space_medium">10dp</dimen>
+    <dimen name="space_xmedium">15dp</dimen>
     <dimen name="space_large">20dp</dimen>
-    <dimen name="space_extra">30dp</dimen>
+    <dimen name="space_xlarge">30dp</dimen>
+    <dimen name="space_extra">40dp</dimen>
     <!--    -->
-    <dimen name="font_small">150sp</dimen>
+    <dimen name="font_small">15sp</dimen>
     <dimen name="font_medium">15sp</dimen>
-    <dimen name="font_large">20sp</dimen>
-    <dimen name="font_extra">25sp</dimen>
+    <dimen name="font_xmedium">20sp</dimen>
+    <dimen name="font_large">25sp</dimen>
+    <dimen name="font_xlarge">35sp</dimen>
+    <dimen name="font_extra">40sp</dimen>
     <!--    -->
 </resources>

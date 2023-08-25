@@ -7,7 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kell.com.example.vaanh.interator.LoginUseCase
 import kell.com.example.vaanh.model.AuthenticationRequest
 import kell.com.example.vaanh.model.AuthenticationResponse
-import kell.com.example.vaanh.utils.SessionManager
+import kell.com.example.vaanh.utils.TokenManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LogInViewModel @Inject constructor(
-    private val loginUseCase: LoginUseCase, private val sessionManager: SessionManager
+    private val loginUseCase: LoginUseCase, private val tokenManager: TokenManager
 ) : ViewModel(), LogInContract {
 
     private val stateUsername = MutableStateFlow("")
@@ -55,7 +55,7 @@ class LogInViewModel @Inject constructor(
                 if (response != null) {
                     if (response.message == "success") {
                         val authResponse: AuthenticationResponse = response.data
-                        sessionManager.saveAuthToken(authResponse.token)
+                        tokenManager.saveAuthToken(authResponse.token)
                         toHome(stateUsername.value)
                     } else {
                         stateMessage.value = response.message

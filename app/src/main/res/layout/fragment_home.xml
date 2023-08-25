@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,21 +11,11 @@
 
     </data>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context="kell.com.example.vaanh.ui.home.HomeFragment">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_extra"
-            android:gravity="center_horizontal"
-            android:paddingVertical="@dimen/space_medium"
-            android:text="@{username}"
-            android:textSize="@dimen/font_large"
-            tools:text="@string/username" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_view_profile"
@@ -32,6 +23,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/space_medium"
-            android:text="@string/view_profile" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:text="@string/view_profile"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

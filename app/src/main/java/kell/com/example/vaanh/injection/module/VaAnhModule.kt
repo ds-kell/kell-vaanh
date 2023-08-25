@@ -10,7 +10,7 @@ import kell.com.example.vaanh.interceptor.HeaderInterceptor
 import kell.com.example.vaanh.repository.VaAnhRepository
 import kell.com.example.vaanh.repository.impl.VaAnhRepositoryImpl
 import kell.com.example.vaanh.repository.service.VaAnhApiService
-import kell.com.example.vaanh.utils.SessionManager
+import kell.com.example.vaanh.utils.TokenManager
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -54,11 +54,11 @@ object VaAnhModule {
 
     @Singleton
     @Provides
-    fun provideSessionManager(@ApplicationContext context: Context): SessionManager =
-        SessionManager(context)
+    fun provideTokenManager(@ApplicationContext context: Context): TokenManager =
+        TokenManager(context)
 
     @Singleton
     @Provides
-    fun provideHeaderInterceptor(sessionManager: SessionManager): HeaderInterceptor =
-        HeaderInterceptor(sessionManager)
+    fun provideHeaderInterceptor(tokenManager: TokenManager): HeaderInterceptor =
+        HeaderInterceptor(tokenManager)
 }

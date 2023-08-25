@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import kell.com.example.vaanh.R
 
-class SessionManager(context: Context) {
+class TokenManager(context: Context) {
     private var prefs: SharedPreferences =
         context.getSharedPreferences(context.getString(R.string.app_name), Context.MODE_PRIVATE)
 

@@ -1,5 +1,8 @@
 package kell.com.example.vaanh.model
 
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
+
 data class AuthenticationRequest(
     val username: String,
     val password: String,
@@ -7,10 +10,10 @@ data class AuthenticationRequest(
 
 
 data class AuthenticationResponse(
-    val token: String,
-    val type: String,
-    val username: String,
-    val authorities: List<String>
+    @SerializedName("token") @Expose val token: String,
+    @SerializedName("type") @Expose val type: String,
+    @SerializedName("username") @Expose val username: String,
+    @SerializedName("authorities") @Expose val authorities: List<String>
 )
 
 

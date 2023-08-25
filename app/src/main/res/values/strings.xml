@@ -14,6 +14,10 @@
     <string name="forgot_password">Forgot password</string>
     <string name="login_failed">Username or password is invalid!</string>
     <string name="phone_or_email">Phone number/Email address</string>
+    <!--    -->
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+
     <!--    profile-->
     <string name="phone_number">Phone number</string>
     <string name="full_name">Full name</string>
@@ -21,6 +25,6 @@
     <string name="view_profile">View profile</string>
     <string name="update_profile">Update profile</string>
 
-
+    <!---->
     <string name="gender">Gender</string>
 </resources>

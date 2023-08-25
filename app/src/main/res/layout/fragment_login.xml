@@ -19,16 +19,28 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_username"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_shop_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space_extra"
+            android:text="@string/app_name"
+            android:textSize="@dimen/font_xlarge" />
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/space_medium"
-            android:layout_marginTop="@dimen/space_extra"
-            android:background="@android:color/transparent"
-            android:hint="@string/username"
-            android:text="@={vm.username}" />
+            android:layout_marginVertical="@dimen/space_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/space_xmedium"
+                android:hint="@string/username"
+                android:text="@={vm.username}" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -39,8 +51,7 @@
                 android:id="@+id/edt_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_medium"
-                android:layout_marginVertical="@dimen/space_medium"
+                android:layout_marginHorizontal="@dimen/space_xmedium"
                 android:hint="@string/password"
                 android:inputType="textPassword"
                 android:text="@={vm.password}" />
@@ -51,11 +62,12 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
             android:layout_gravity="center"
-            tools:text="@string/login_failed"
+            android:layout_marginVertical="@dimen/space_medium"
+            android:background="@android:color/transparent"
             android:text="@{vm.message}"
-            android:textColor="@color/red" />
+            android:textColor="@color/red"
+            tools:text="@string/login_failed" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -87,11 +99,11 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_submit"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/space_extra"
             android:layout_marginTop="@dimen/space_large"
-            android:paddingHorizontal="@dimen/space_extra"
             android:text="@string/login" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout><!--android:onClick="@{_->vm.onSubmit()}"-->
