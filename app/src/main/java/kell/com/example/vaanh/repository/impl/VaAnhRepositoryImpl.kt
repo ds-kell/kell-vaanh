@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 class VaAnhRepositoryImpl @Inject constructor(private val service: VaAnhApiService) :
     VaAnhRepository {
-    override suspend fun login(param: AuthenticationRequest): Response<ResponseUtil<AuthenticationResponse>> =
+    override suspend fun login(param: AuthenticationRequest): ResponseUtil<AuthenticationResponse> =
         service.login(request = param)
 
     override suspend fun signUp(param: SignUpRequest): Response<SignUpResponse> =

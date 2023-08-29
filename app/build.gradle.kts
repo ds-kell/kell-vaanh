@@ -13,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "kell.com.example.vaanh"
-        minSdk = 24
+        minSdk = 31
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -50,23 +50,24 @@ android {
 
 dependencies {
 //    core
-    implementation("androidx.core:core-ktx:1.10.1")
+    implementation("androidx.core:core-ktx:1.12.0-rc01")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.activity:activity-ktx:1.7.2")
+    implementation("androidx.activity:activity-ktx:1.8.0-alpha06")
 //    material
     implementation("com.google.android.material:material:1.11.0-alpha02")
-    implementation("androidx.compose.material3:material3:1.2.0-alpha05")
+    implementation("androidx.compose.material3:material3:1.2.0-alpha06")
 //    layout
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 //    nav
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.1")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.1")
 //    recycle view
     implementation("androidx.recyclerview:recyclerview:1.3.1")
     implementation("androidx.cardview:cardview:1.0.0")
 //    data binding
     implementation("androidx.databinding:databinding-runtime:8.1.1")
     implementation("com.google.android.gms:play-services-analytics:18.0.3")
+    implementation("androidx.core:core-animation:1.0.0-rc01")
 //    test
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
@@ -85,8 +86,8 @@ dependencies {
     implementation("com.google.dagger:hilt-android:2.47")
     kapt("com.google.dagger:hilt-compiler:2.47")
 //
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 //
 //    implementation("com.jakewharton.timber:timber:5.0.1")
 //  Room components
@@ -94,10 +95,12 @@ dependencies {
     implementation("androidx.room:room-common:2.5.2")
     ksp("androidx.room:room-compiler:2.5.2")
 //
-    implementation("com.github.bumptech.glide:glide:4.15.1")
-    annotationProcessor("com.github.bumptech.glide:compiler:4.15.1")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
 //
     implementation("com.google.firebase:firebase-storage:20.2.1")
 //
     implementation("de.hdodenhof:circleimageview:3.1.0")
+//
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }

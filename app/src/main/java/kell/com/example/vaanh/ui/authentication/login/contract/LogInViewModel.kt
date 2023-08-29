@@ -1,17 +1,18 @@
 package kell.com.example.vaanh.ui.authentication.login.contract
 
-import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kell.com.example.vaanh.interator.LoginUseCase
 import kell.com.example.vaanh.model.AuthenticationRequest
-import kell.com.example.vaanh.model.AuthenticationResponse
 import kell.com.example.vaanh.utils.TokenManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
 
 @HiltViewModel
 class LogInViewModel @Inject constructor(
@@ -23,6 +24,15 @@ class LogInViewModel @Inject constructor(
     private val stateEmail = MutableStateFlow("")
     private val stateMessage = MutableStateFlow("")
 
+    private val navigateToActivity: MutableLiveData<Event<Boolean>> =
+        MutableLiveData<Event<Boolean>>()
+
+    private val redirectToMainActivity: MutableStateFlow<Event<Boolean>> =
+        MutableStateFlow<Event<Boolean>>(Event(false))
+
+    fun getNavigateToActivityEvent(): LiveData<Event<Boolean>> {
+        return navigateToActivity
+    }
 
     override fun setUsername(username: String) {
         stateUsername.value = username
@@ -40,26 +50,26 @@ class LogInViewModel @Inject constructor(
 
     override fun getPassword(): MutableStateFlow<String> = statePassword
     override fun getEmail(): MutableStateFlow<String> = stateEmail
+    override fun navigateToMainActivity() {
+        navigateToActivity.value = Event(true)
+    }
+
     override fun getMessage(): StateFlow<String> = stateMessage
 
-    override fun onSubmit(toHome: (username: String) -> Unit) {
+    override fun onSubmit() {
         if (stateUsername.value == "" || statePassword.value == "") {
             stateMessage.value = "Please enter all information"
         } else {
-            val authRequest = AuthenticationRequest(
-                stateUsername.value, statePassword.value
-            )
             viewModelScope.launch {
-                val response = loginUseCase.execute(authRequest)
-                Log.d("kell-log", "$response")
-                if (response != null) {
-                    if (response.message == "success") {
-                        val authResponse: AuthenticationResponse = response.data
-                        tokenManager.saveAuthToken(authResponse.token)
-                        toHome(stateUsername.value)
-                    } else {
-                        stateMessage.value = response.message
-                    }
+                loginUseCase.execute(
+                    AuthenticationRequest(
+                        stateUsername.value,
+                        statePassword.value
+                    )
+                )
+            }.invokeOnCompletion {
+                if (it == null) {
+                    stateMessage.value = "${tokenManager.fetchAuthToken()}"
                 } else {
                     stateMessage.value = "Username or password is invalid!"
                 }

@@ -9,7 +9,7 @@ import kell.com.example.vaanh.model.SignUpResponse
 import retrofit2.Response
 
 interface VaAnhRepository {
-    suspend fun login(param: AuthenticationRequest): Response<ResponseUtil<AuthenticationResponse>>
+    suspend fun login(param: AuthenticationRequest): ResponseUtil<AuthenticationResponse>
     suspend fun signUp(param: SignUpRequest): Response<SignUpResponse>
     suspend fun getProfile(): Response<ResponseUtil<AccountProfile>>
 }

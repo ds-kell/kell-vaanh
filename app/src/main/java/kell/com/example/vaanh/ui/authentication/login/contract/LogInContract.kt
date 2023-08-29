@@ -3,7 +3,7 @@ package kell.com.example.vaanh.ui.authentication.login.contract
 import kotlinx.coroutines.flow.StateFlow
 
 interface LogInContract {
-    fun onSubmit(toHome: (username: String) -> Unit)
+    fun onSubmit()
     fun setUsername(username: String)
     fun setPassword(password: String)
     fun setEmail(email: String)
@@ -11,4 +11,5 @@ interface LogInContract {
     fun getPassword(): StateFlow<String>
     fun getMessage(): StateFlow<String>
     fun getEmail(): StateFlow<String>
+    fun navigateToMainActivity()
 }

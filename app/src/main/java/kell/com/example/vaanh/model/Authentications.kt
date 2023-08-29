@@ -10,12 +10,12 @@ data class AuthenticationRequest(
 
 
 data class AuthenticationResponse(
-    @SerializedName("token") @Expose val token: String,
+    @SerializedName("accessToken") @Expose val accessToken: String,
+    @SerializedName("refreshToken") @Expose val refreshToken: String,
     @SerializedName("type") @Expose val type: String,
     @SerializedName("username") @Expose val username: String,
     @SerializedName("authorities") @Expose val authorities: List<String>
 )
-
 
 data class AccountProfile(
     val fullName: String,

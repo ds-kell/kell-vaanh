@@ -104,6 +104,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginHorizontal="@dimen/space_extra"
             android:layout_marginTop="@dimen/space_large"
+            android:onClick="@{_->vm.onSubmit()}"
             android:text="@string/login" />
     </androidx.appcompat.widget.LinearLayoutCompat>
-</layout><!--android:onClick="@{_->vm.onSubmit()}"-->
+</layout>

@@ -7,7 +7,7 @@
         android:icon="@drawable/baseline_home_24"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/fragmentLogIn"
+        android:id="@+id/fragment_cart"
         android:icon="@drawable/baseline_add_shopping_cart_24"
         android:title="@string/cart"
         app:showAsAction="ifRoom" />

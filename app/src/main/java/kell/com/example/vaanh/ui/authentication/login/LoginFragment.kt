@@ -23,15 +23,12 @@ class LoginFragment : Fragment() {
         return FragmentLoginBinding.inflate(inflater, container, false).apply {
             lifecycleOwner = this@LoginFragment
             vm = viewModel
-            btnSubmit.setOnClickListener {
-                viewModel.onSubmit(toHome = {
-                    findNavController().navigate(LoginFragmentDirections.toHome(it))
-                })
-            }
             tvSignup.setOnClickListener {
                 findNavController().navigate(R.id.fragment_sign_up)
             }
         }.root
     }
-
 }
+//viewModel.onSubmit(toHome = {
+//                    findNavController().navigate(LoginFragmentDirections.toHome(it))
+//                })

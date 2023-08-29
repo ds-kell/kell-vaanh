@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_home">
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="kell.com.example.vaanh.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <action
+            android:id="@+id/to_fragment_user_profile"
+            app:destination="@+id/fragment_user_profile" />
+        <action
+            android:id="@+id/to_fragment_cart"
+            app:destination="@id/fragment_cart" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_user_profile"
+        android:name="kell.com.example.vaanh.ui.user_profile.AccountProfileFragment"
+        tools:layout="@layout/fragment_account_profile" />
+    <fragment
+        android:id="@+id/fragment_cart"
+        android:name="kell.com.example.vaanh.ui.cart.CartFragment"
+        tools:layout="@layout/fragment_cart" />
+</navigation>

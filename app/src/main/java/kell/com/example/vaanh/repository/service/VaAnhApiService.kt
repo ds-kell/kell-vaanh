@@ -11,7 +11,7 @@ import retrofit2.http.*
 
 interface VaAnhApiService {
     @POST("auth/login")
-    suspend fun login(@Body request: AuthenticationRequest): Response<ResponseUtil<AuthenticationResponse>>
+    suspend fun login(@Body request: AuthenticationRequest): ResponseUtil<AuthenticationResponse>
 
 //    @GET("auth/refresh")
 //    suspend fun refreshToken(@Header("Authorization") token: String, ): Response<AuthenticationResponse>
