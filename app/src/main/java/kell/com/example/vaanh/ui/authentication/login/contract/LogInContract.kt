@@ -11,5 +11,6 @@ interface LogInContract {
     fun getPassword(): StateFlow<String>
     fun getMessage(): StateFlow<String>
     fun getEmail(): StateFlow<String>
-    fun navigateToMainActivity()
+    fun getStateToActivity(): StateFlow<Boolean>
+    fun setStateToActivity(status: Boolean)
 }

@@ -1,7 +1,5 @@
 package kell.com.example.vaanh.ui.authentication.login.contract
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -23,16 +21,7 @@ class LogInViewModel @Inject constructor(
     private val statePassword = MutableStateFlow("")
     private val stateEmail = MutableStateFlow("")
     private val stateMessage = MutableStateFlow("")
-
-    private val navigateToActivity: MutableLiveData<Event<Boolean>> =
-        MutableLiveData<Event<Boolean>>()
-
-    private val redirectToMainActivity: MutableStateFlow<Event<Boolean>> =
-        MutableStateFlow<Event<Boolean>>(Event(false))
-
-    fun getNavigateToActivityEvent(): LiveData<Event<Boolean>> {
-        return navigateToActivity
-    }
+    private val stateToActivity = MutableStateFlow(false)
 
     override fun setUsername(username: String) {
         stateUsername.value = username
@@ -46,13 +35,15 @@ class LogInViewModel @Inject constructor(
         stateEmail.value = email
     }
 
+    override fun setStateToActivity(status: Boolean) {
+        stateToActivity.value = status
+    }
+
     override fun getUsername(): MutableStateFlow<String> = stateUsername
 
     override fun getPassword(): MutableStateFlow<String> = statePassword
     override fun getEmail(): MutableStateFlow<String> = stateEmail
-    override fun navigateToMainActivity() {
-        navigateToActivity.value = Event(true)
-    }
+    override fun getStateToActivity(): StateFlow<Boolean> = stateToActivity
 
     override fun getMessage(): StateFlow<String> = stateMessage
 
@@ -66,10 +57,13 @@ class LogInViewModel @Inject constructor(
                         stateUsername.value,
                         statePassword.value
                     )
-                )
+                ).also {
+                    tokenManager.saveAuthToken(it.accessToken)
+                    stateToActivity.value = true
+                }
             }.invokeOnCompletion {
                 if (it == null) {
-                    stateMessage.value = "${tokenManager.fetchAuthToken()}"
+
                 } else {
                     stateMessage.value = "Username or password is invalid!"
                 }
