@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
 
     <application
-        android:name=".VaAnhApplication"
+        android:name="vn.com.kell.vaanh.VaAnhApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -20,10 +20,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
         <activity
-            android:name=".ui.authentication.AuthActivity"
+            android:name="vn.com.kell.vaanh.ui.authentication.AuthActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.splash.SplashActivity"
+            android:name="vn.com.kell.vaanh.ui.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/SplashscreenTheme">
             <intent-filter>
@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name="vn.com.kell.vaanh.ui.main.MainActivity"
             android:exported="false" />
     </application>
 

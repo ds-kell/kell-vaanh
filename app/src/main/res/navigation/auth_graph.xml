@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/fragment_sign_up"
-        android:name="kell.com.example.vaanh.ui.authentication.signup.SignUpFragment"
+        android:name="vn.com.kell.vaanh.ui.authentication.signup.SignUpFragment"
         tools:layout="@layout/fragment_sign_up">
 
     </fragment>
     <fragment
         android:id="@+id/fragment_login"
-        android:name="kell.com.example.vaanh.ui.authentication.login.LoginFragment"
+        android:name="vn.com.kell.vaanh.ui.authentication.login.LoginFragment"
         tools:layout="@layout/fragment_login" />
 </navigation>

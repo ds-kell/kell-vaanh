@@ -6,11 +6,11 @@
 
         <variable
             name="vm"
-            type="kell.com.example.vaanh.ui.user_profile.contract.AccountProfileViewModel" />
+            type="vn.com.kell.vaanh.ui.user_profile.contract.AccountProfileViewModel" />
 
         <variable
             name="accountProfile"
-            type="kell.com.example.vaanh.model.AccountProfile" />
+            type="vn.com.kell.vaanh.model.AccountProfile" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"

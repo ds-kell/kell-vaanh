@@ -11,48 +11,74 @@
 
         <variable
             name="vm"
-            type="kell.com.example.vaanh.ui.authentication.login.contract.LogInViewModel" />
+            type="vn.com.kell.vaanh.ui.authentication.login.contract.LogInViewModel" />
     </data>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@drawable/img_bg_login"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:alpha="0.1"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/btn_submit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_shop_name" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_shop_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/space_extra"
             android:text="@string/app_name"
-            android:textSize="@dimen/font_xlarge" />
+            android:textColor="@color/blue"
+            android:textSize="@dimen/font_xlarge"
+            app:layout_constraintBottom_toTopOf="@id/layout_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
+            android:id="@+id/layout_username"
+            style="@style/AppWidget.TextInputLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/space_medium">
+            android:layout_marginVertical="@dimen/space_medium"
+            android:hint="@string/username"
+            app:layout_constraintBottom_toTopOf="@id/layout_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_username"
+                style="@style/AppWidget.TextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/space_xmedium"
-                android:hint="@string/username"
+                android:hint="@string/label_username_hint"
                 android:text="@={vm.username}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
+            android:id="@+id/layout_password"
+            style="@style/AppWidget.TextInputLayout"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:endIconMode="password_toggle">
+            android:hint="@string/password"
+            app:endIconMode="password_toggle"
+            app:layout_constraintBottom_toTopOf="@id/tv_login_message"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_password"
+                style="@style/AppWidget.TextInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/space_xmedium"
-                android:hint="@string/password"
+                android:hint="@string/label_password_hint"
                 android:inputType="textPassword"
                 android:text="@={vm.password}" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -67,44 +93,47 @@
             android:background="@android:color/transparent"
             android:text="@{vm.message}"
             android:textColor="@color/red"
+            app:layout_constraintBottom_toTopOf="@id/tv_signup"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             tools:text="@string/login_failed" />
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_forgot_password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_marginStart="@dimen/space_xmedium"
+            android:text="@string/forgot_password"
+            android:textColor="@color/blue"
+            app:layout_constraintBottom_toTopOf="@id/btn_submit"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_forgot_password"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:gravity="center_horizontal"
-                android:text="@string/forgot_password"
-                android:textColor="@color/blue" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_signup"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:gravity="center_horizontal"
-                android:text="@string/dont_have_account"
-                android:textColor="@color/blue" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_signup"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_xmedium"
+            android:text="@string/dont_have_account"
+            android:textColor="@color/blue"
+            app:layout_constraintBottom_toTopOf="@id/btn_submit"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_submit"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginHorizontal="@dimen/space_extra"
-            android:layout_marginTop="@dimen/space_large"
             android:onClick="@{_->vm.onSubmit()}"
-            android:text="@string/login" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:text="@string/login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

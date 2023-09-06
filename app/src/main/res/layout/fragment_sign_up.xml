@@ -11,14 +11,14 @@
 
         <variable
             name="vm"
-            type="kell.com.example.vaanh.ui.authentication.signup.contract.SignUpViewModel" />
+            type="vn.com.kell.vaanh.ui.authentication.signup.contract.SignUpViewModel" />
     </data>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="kell.com.example.vaanh.ui.authentication.signup.SignUpFragment">
+        tools:context="kell.com.example.vaanh.vn.com.kell.vaanh.ui.authentication.signup.SignUpFragment">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_phone_number"

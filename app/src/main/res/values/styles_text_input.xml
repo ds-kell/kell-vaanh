@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppWidget.TextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="expandedHintEnabled">false</item>
+        <item name="hintAnimationEnabled">false</item>
+    </style>
+
+    <style name="AppWidget.TextInputLayout.Dropdown" parent="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="expandedHintEnabled">false</item>
+        <item name="hintAnimationEnabled">false</item>
+    </style>
+
+    <style name="AppWidget.TextInputLayout.Filled" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="expandedHintEnabled">false</item>
+        <item name="hintAnimationEnabled">false</item>
+    </style>
+
+    <style name="AppWidget.TextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText.OutlinedBox.Dense" />
+
+    <style name="AppWidget.TextInputEditText.AutoComplete" parent="Widget.Material3.AutoCompleteTextView.OutlinedBox.Dense" />
+
+</resources>

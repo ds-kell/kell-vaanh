@@ -6,7 +6,7 @@
     app:startDestination="@id/fragment_home">
     <fragment
         android:id="@+id/fragment_home"
-        android:name="kell.com.example.vaanh.ui.home.HomeFragment"
+        android:name="vn.com.kell.vaanh.ui.home.HomeFragment"
         tools:layout="@layout/fragment_home">
         <argument
             android:name="username"
@@ -20,10 +20,10 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_user_profile"
-        android:name="kell.com.example.vaanh.ui.user_profile.AccountProfileFragment"
+        android:name="vn.com.kell.vaanh.ui.user_profile.AccountProfileFragment"
         tools:layout="@layout/fragment_account_profile" />
     <fragment
         android:id="@+id/fragment_cart"
-        android:name="kell.com.example.vaanh.ui.cart.CartFragment"
+        android:name="vn.com.kell.vaanh.ui.cart.CartFragment"
         tools:layout="@layout/fragment_cart" />
 </navigation>
