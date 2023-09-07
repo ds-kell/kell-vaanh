@@ -1,0 +1,11 @@
+Có bốn thành phần nhận biết được vòng đời trong androidx.lifecycle:
+
+- **LifecycleOwner**: là một giao diện đại diện cho một thành phần có vòng đời, chẳng hạn như hoạt động hoặc mảnh.
+Nó cung cấp một phương thức để lấy đối tượng Lifecycle liên quan.
+- **Lifecycle**: là một lớp trừu tượng mô tả trạng thái và sự kiện của vòng đời của LifecycleOwner.
+Nó cho phép bạn thêm và xóa các trình quan sát vòng đời, là các thành phần theo dõi các thay đổi trong vòng đời.
+- **LifecycleObserver**: là một giao diện đánh dấu cho một thành phần muốn nhận các thông báo về các thay đổi trong vòng đời của một LifecycleOwner khác.
+Bạn có thể triển khai các phương thức callback như onCreate(), onStart(), onResume(), onPause(), onStop() và onDestroy() để xử lý các sự kiện vòng đời tương ứng.
+- **LifecycleEventObserver**: là một giao diện con của LifecycleObserver, cho phép bạn xử lý bất kỳ sự kiện vòng đời nào
+bằng cách triển khai một phương thức duy nhất onStateChanged(LifecycleOwner, Lifecycle.Event).
+Bạn có thể sử dụng giao diện này để tạo các trình quan sát vòng đời linh hoạt hơn.

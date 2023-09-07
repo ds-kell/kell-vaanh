@@ -35,7 +35,9 @@ data class SignUpResponse(
     val message: String,
 )
 
-data class ResponseUtil<T>(
+data class ResponseUtils<T>(
     val message: String,
     val data: T,
-)
+) {
+
+}

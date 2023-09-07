@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray"
+        android:paddingVertical="10dp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_search_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/space_xsmall"
+            android:background="@drawable/bg_border_left"
+            android:ellipsize="end"
+            android:hint="@string/hint_search"
+            android:maxLines="1"
+            android:paddingStart="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/img_btn_search"
+            app:layout_constraintEnd_toStartOf="@+id/img_btn_search"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/img_btn_search"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_btn_search"
+            android:layout_width="@dimen/size_img_icon"
+            android:layout_height="@dimen/size_img_icon"
+            android:layout_marginEnd="@dimen/space_xsmall"
+            android:background="@drawable/bg_border_right"
+            android:padding="@dimen/space_medium"
+            android:src="@drawable/ic_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

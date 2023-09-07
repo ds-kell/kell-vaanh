@@ -7,6 +7,7 @@
     <string name="label_password_hint">Enter your password</string>
     <string name="login">Login</string>
     <string name="sign_up">Sign Up</string>
+    <string name="label_save_user">Save user</string>
     <string name="dont_have_account">Don"'"t have account? Sign Up</string>
     <string name="have_account">Have account? Log In</string>
     <string name="username">Username</string>
@@ -41,4 +42,7 @@
     <string name="course_rating">Course Rating</string>
     <string name="course_name">Course Name</string>
     <string name="run">Run</string>
+    <string name="example_price">1.000.0000</string>
+    <string name="example_quantity_sold">2,5k</string>
+    <string name="hint_search">Enter to search</string>
 </resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="vn.com.kell.vaanh.model.Product" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_small">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_product"
+            android:layout_width="@dimen/size_img_product_width"
+            android:layout_height="@dimen/size_img_product_height"
+            android:adjustViewBounds="true"
+            android:src="@drawable/img_mm_kafka"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_medium"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{product.name}"
+            app:layout_constraintEnd_toEndOf="@id/img_product"
+            app:layout_constraintStart_toStartOf="@id/img_product"
+            app:layout_constraintTop_toBottomOf="@+id/img_product"
+            tools:text="Kafka" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:text="@string/example_price"
+            android:layout_marginStart="@dimen/space_medium"
+            app:layout_constraintStart_toStartOf="@id/img_product"
+            app:layout_constraintTop_toBottomOf="@+id/tv_product_name"
+            tools:text="@string/example_price" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_quantity_sold"
+            android:layout_width="wrap_content"
+            android:text="@string/example_quantity_sold"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/space_medium"
+            app:layout_constraintEnd_toEndOf="@id/img_product"
+            app:layout_constraintTop_toBottomOf="@+id/tv_product_name"
+            tools:text="@string/example_quantity_sold" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

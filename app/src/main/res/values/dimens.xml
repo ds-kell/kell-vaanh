@@ -2,13 +2,14 @@
 <resources>
     <!--    -->
     <dimen name="space_small">5dp</dimen>
+    <dimen name="space_xsmall">5dp</dimen>
     <dimen name="space_medium">10dp</dimen>
     <dimen name="space_xmedium">15dp</dimen>
     <dimen name="space_large">20dp</dimen>
     <dimen name="space_xlarge">30dp</dimen>
     <dimen name="space_extra">40dp</dimen>
     <!--    -->
-    <dimen name="font_small">15sp</dimen>
+    <dimen name="font_small">10sp</dimen>
     <dimen name="font_medium">15sp</dimen>
     <dimen name="font_xmedium">20sp</dimen>
     <dimen name="font_large">25sp</dimen>
@@ -19,9 +20,19 @@
     <dimen name="dimen_x2mini">2dp</dimen>
     <dimen name="dimen_x3mini">3dp</dimen>
     <dimen name="dimen_small">5dp</dimen>
+    <dimen name="dimen_xsmall">8dp</dimen>
     <dimen name="dimen_medium">10dp</dimen>
     <dimen name="dimen_xmedium">15dp</dimen>
-    <dimen name="dimen_large">20dp</dimen>
+    <dimen name="dimen_xxmedium">20dp</dimen>
+    <dimen name="dimen_large">25dp</dimen>
     <dimen name="dimen_xlarge">30dp</dimen>
+    <dimen name="dimen_xxlarge">35dp</dimen>
     <dimen name="dimen_extra">40dp</dimen>
+    <dimen name="dimen_xextra">45dp</dimen>
+    <!--    -->
+    <dimen name="size_img_product_width">140dp</dimen>
+    <dimen name="size_img_product_height">180dp</dimen>
+    <!--    -->
+    <dimen name="size_img_icon">45dp</dimen>
+
 </resources>

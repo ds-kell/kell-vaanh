@@ -8,9 +8,7 @@
         android:id="@+id/fragment_home"
         android:name="vn.com.kell.vaanh.ui.home.HomeFragment"
         tools:layout="@layout/fragment_home">
-        <argument
-            android:name="username"
-            app:argType="string" />
+
         <action
             android:id="@+id/to_fragment_user_profile"
             app:destination="@+id/fragment_user_profile" />
@@ -21,7 +19,11 @@
     <fragment
         android:id="@+id/fragment_user_profile"
         android:name="vn.com.kell.vaanh.ui.user_profile.AccountProfileFragment"
-        tools:layout="@layout/fragment_account_profile" />
+        tools:layout="@layout/fragment_account_profile">
+        <argument
+            android:name="username"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_cart"
         android:name="vn.com.kell.vaanh.ui.cart.CartFragment"

@@ -17,7 +17,8 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_splash)
-        val ok = Random.nextInt(0, 2)
+        var ok = Random.nextInt(0, 2)
+        ok = 1
         Handler(Looper.getMainLooper()).postDelayed({
             if (ok == 0) {
                 val intent = Intent(this@SplashActivity, AuthActivity::class.java)
@@ -26,8 +27,7 @@ class SplashActivity : AppCompatActivity() {
             } else {
                 val mainIntent = Intent(this@SplashActivity, MainActivity::class.java)
                 mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-                val intent = Intent(this@SplashActivity, AuthActivity::class.java)
-                startActivity(intent)
+                startActivity(mainIntent)
                 finish()
             }
         }, 1000)

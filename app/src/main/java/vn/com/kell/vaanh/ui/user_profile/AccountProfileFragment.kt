@@ -31,7 +31,6 @@ class AccountProfileFragment : Fragment() {
                     if (it != null) {
                         Glide.with(this@AccountProfileFragment)
                             .load(it.avatarUrl)
-                            .override(400, 500)
                             .centerCrop()
                             .into(imgAvatar)
                     }
@@ -43,6 +42,7 @@ class AccountProfileFragment : Fragment() {
             }
         }.root
     }
-
 }
-
+/**
+.override(400, 500)
+ * */

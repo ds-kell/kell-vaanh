@@ -52,7 +52,7 @@ dependencies {
 //    core
     implementation("androidx.core:core-ktx:1.12.0-rc01")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.activity:activity-ktx:1.8.0-alpha06")
+    implementation("androidx.activity:activity-ktx:1.8.0-alpha07")
 //    material
     implementation("com.google.android.material:material:1.11.0-alpha02")
     implementation("androidx.compose.material3:material3:1.2.0-alpha06")
@@ -63,6 +63,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:2.7.1")
 //    recycle view
     implementation("androidx.recyclerview:recyclerview:1.3.1")
+    implementation("androidx.recyclerview:recyclerview-selection:1.1.0")
     implementation("androidx.cardview:cardview:1.0.0")
 //    data binding
     implementation("androidx.databinding:databinding-runtime:8.1.1")
@@ -83,7 +84,7 @@ dependencies {
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
 //
-    implementation("com.google.dagger:hilt-android:2.47")
+    implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-compiler:2.47")
 //
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
@@ -103,4 +104,25 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
 //
     implementation("androidx.core:core-splashscreen:1.0.1")
+}
+dependencies {
+    val paging_version = "3.2.0"
+
+    implementation("androidx.paging:paging-runtime-ktx:$paging_version")
+
+    // alternatively - without Android dependencies for tests
+    testImplementation("androidx.paging:paging-common-ktx:$paging_version")
+
+    // optional - RxJava2 support
+    implementation("androidx.paging:paging-rxjava2-ktx:$paging_version")
+
+    // optional - RxJava3 support
+    implementation("androidx.paging:paging-rxjava3:$paging_version")
+
+    // optional - Guava ListenableFuture support
+    implementation("androidx.paging:paging-guava:$paging_version")
+
+    // optional - Jetpack Compose integration
+    implementation("androidx.paging:paging-compose:3.2.0")
+//
 }

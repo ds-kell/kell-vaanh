@@ -16,7 +16,6 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:background="@drawable/img_bg_login"
         android:layout_height="match_parent">
 
         <androidx.cardview.widget.CardView
@@ -97,7 +96,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="@string/login_failed" />
-
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_forgot_password"

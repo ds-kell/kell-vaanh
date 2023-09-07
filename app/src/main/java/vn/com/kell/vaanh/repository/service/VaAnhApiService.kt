@@ -5,13 +5,14 @@ import retrofit2.http.*
 import vn.com.kell.vaanh.model.AccountProfile
 import vn.com.kell.vaanh.model.AuthenticationRequest
 import vn.com.kell.vaanh.model.AuthenticationResponse
-import vn.com.kell.vaanh.model.ResponseUtil
+import vn.com.kell.vaanh.model.Product
+import vn.com.kell.vaanh.model.ResponseUtils
 import vn.com.kell.vaanh.model.SignUpRequest
 import vn.com.kell.vaanh.model.SignUpResponse
 
 interface VaAnhApiService {
     @POST("auth/login")
-    suspend fun login(@Body request: AuthenticationRequest): ResponseUtil<AuthenticationResponse>
+    suspend fun login(@Body request: AuthenticationRequest): ResponseUtils<AuthenticationResponse>
 
 //    @GET("auth/refresh")
 //    suspend fun refreshToken(@Header("Authorization") token: String, ): Response<AuthenticationResponse>
@@ -20,8 +21,11 @@ interface VaAnhApiService {
     suspend fun signUp(@Body request: SignUpRequest): Response<SignUpResponse>
 
     @GET("user/profile")
-    suspend fun getProfile(): Response<ResponseUtil<AccountProfile>>
+    suspend fun getProfile(): Response<ResponseUtils<AccountProfile>>
 
     @POST("user/profile/update")
-    suspend fun updateProfile(): Response<ResponseUtil<AccountProfile>>
+    suspend fun updateProfile(): Response<ResponseUtils<AccountProfile>>
+
+    @POST("products")
+    suspend fun getProducts(): ResponseUtils<List<Product>>
 }
