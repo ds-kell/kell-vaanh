@@ -15,6 +15,7 @@ import kotlinx.coroutines.launch
 import vn.com.kell.vaanh.ui.home.adapter.HomeAdapter
 import vn.com.kell.vaanh.ui.home.contract.HomeViewModel
 
+
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     private val viewModel: HomeViewModel by viewModels()
@@ -34,6 +35,18 @@ class HomeFragment : Fragment() {
                     adapter.updateData(it)
                 }
             }
+
+
+//            val coordinatorLayout = findViewById(R.id.main_content) as CoordinatorLayout
+//            val behavior: BottomSheetBehavior<*> = BottomSheetBehavior.from<View>(rcvProducts)
+//
+//            layoutCoor.setOnClickListener(View.OnClickListener {
+//                if (behavior.state == BottomSheetBehavior.STATE_COLLAPSED) {
+//                    behavior.setState(BottomSheetBehavior.STATE_EXPANDED)
+//                } else {
+//                    behavior.setState(BottomSheetBehavior.STATE_COLLAPSED)
+//                }
+//            })
         }.root
     }
 }

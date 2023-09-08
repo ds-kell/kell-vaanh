@@ -104,25 +104,25 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
 //
     implementation("androidx.core:core-splashscreen:1.0.1")
-}
-dependencies {
-    val paging_version = "3.2.0"
+//
+    val pagingVersion = "3.2.0"
 
-    implementation("androidx.paging:paging-runtime-ktx:$paging_version")
+    implementation("androidx.paging:paging-runtime-ktx:$pagingVersion")
 
     // alternatively - without Android dependencies for tests
-    testImplementation("androidx.paging:paging-common-ktx:$paging_version")
+    testImplementation("androidx.paging:paging-common-ktx:$pagingVersion")
 
     // optional - RxJava2 support
-    implementation("androidx.paging:paging-rxjava2-ktx:$paging_version")
+    implementation("androidx.paging:paging-rxjava2-ktx:$pagingVersion")
 
     // optional - RxJava3 support
-    implementation("androidx.paging:paging-rxjava3:$paging_version")
+    implementation("androidx.paging:paging-rxjava3:$pagingVersion")
 
     // optional - Guava ListenableFuture support
-    implementation("androidx.paging:paging-guava:$paging_version")
+    implementation("androidx.paging:paging-guava:$pagingVersion")
 
     // optional - Jetpack Compose integration
     implementation("androidx.paging:paging-compose:3.2.0")
 //
+    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
 }

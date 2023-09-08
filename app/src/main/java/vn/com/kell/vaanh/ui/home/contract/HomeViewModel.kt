@@ -24,7 +24,11 @@ class HomeViewModel @Inject constructor(
     private fun initData() {
         viewModelScope.launch {
             val response = getProductUseCase.execute()
-            stateProduct.value = response
+            val tmp = mutableListOf<Product>()
+            tmp.addAll(response)
+            tmp.addAll(response)
+            tmp.addAll(response)
+            stateProduct.value = tmp
         }
     }
 }
