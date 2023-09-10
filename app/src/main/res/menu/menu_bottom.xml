@@ -3,17 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/fragment_home"
-        android:title="@string/home"
-        android:icon="@drawable/baseline_home_24"
+        android:title="@string/label_home"
+        android:icon="@drawable/ic_home"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/fragment_cart"
-        android:icon="@drawable/baseline_add_shopping_cart_24"
-        android:title="@string/cart"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/fragment_user_profile"
-        android:icon="@drawable/baseline_account_circle_24"
-        android:title="@string/view_profile"
-        app:showAsAction="ifRoom" />
+
 </menu>

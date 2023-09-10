@@ -26,6 +26,6 @@ interface VaAnhApiService {
     @POST("user/profile/update")
     suspend fun updateProfile(): Response<ResponseUtils<AccountProfile>>
 
-    @POST("products")
+    @POST("product/products")
     suspend fun getProducts(): ResponseUtils<List<Product>>
 }

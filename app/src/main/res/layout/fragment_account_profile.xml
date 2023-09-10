@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/space_large"
-            tools:src="@drawable/icons8_facebook" />
+            tools:src="@drawable/ic_logo" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_update_profile"

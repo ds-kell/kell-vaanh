@@ -18,8 +18,12 @@
     <string name="login_failed">Username or password is invalid!</string>
     <string name="phone_or_email">Phone number/Email address</string>
     <!--    -->
-    <string name="home">Home</string>
-    <string name="cart">Cart</string>
+    <string name="label_home">Home</string>
+    <string name="label_cart">Cart</string>
+    <string name="label_account">Account</string>
+    <string name="label_notification">Notification</string>
+    <string name="label_message">Message</string>
+    <string name="label_chat">Chat</string>
 
     <!--    profile-->
     <string name="phone_number">Phone number</string>

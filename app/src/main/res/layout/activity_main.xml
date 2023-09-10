@@ -52,7 +52,7 @@
 
             <include
                 android:id="@+id/bottom_appbar"
-                layout="@layout/layout_footer"
+                layout="@layout/layout_nav_footer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_anchor="@id/layout_content"

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="icHome"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="homeLabel"
+            type="String" />
+
+        <variable
+            name="icCart"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="cartLabel"
+            type="String" />
+
+        <variable
+            name="icNotification"
+            type="android.graphics.drawable.Drawable"/>
+
+        <variable
+            name="notificationLabel"
+            type="String" />
+
+        <variable
+            name="icAccount"
+            type="android.graphics.drawable.Drawable" />
+
+        <variable
+            name="accountLabel"
+            type="String" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:onClick="onNavItemClick"
+        android:orientation="horizontal">
+
+        <include
+            android:id="@+id/nav_home"
+            layout="@layout/layout_item_nav_bot_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icon="@{icHome}"
+            app:label="@{homeLabel}" />
+
+        <include
+            android:id="@+id/nav_cart"
+            layout="@layout/layout_item_nav_bot_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icon="@{icCart}"
+            app:label="@{cartLabel}" />
+
+        <include
+            android:id="@+id/nav_notification"
+            layout="@layout/layout_item_nav_bot_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icon="@{icNotification}"
+            app:label="@{notificationLabel}" />
+
+        <include
+            android:id="@+id/nav_account"
+            layout="@layout/layout_item_nav_bot_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:icon="@{icAccount}"
+            app:label="@{accountLabel}" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

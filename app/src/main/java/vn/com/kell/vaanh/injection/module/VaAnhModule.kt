@@ -20,7 +20,8 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object VaAnhModule {
-    private const val BASE_URL = "http://10.0.2.2:8088/api/"
+    private const val BASE_URL_CPN = "http://10.0.2.2:8088/api/"
+    private const val BASE_URL_HOME = "http://192.168.1.213:8088/api/"
 
     @Singleton
     @Provides
@@ -37,7 +38,7 @@ object VaAnhModule {
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl(BASE_URL)
+        .baseUrl(BASE_URL_HOME)
         .client(okHttpClient)
         .build()
 

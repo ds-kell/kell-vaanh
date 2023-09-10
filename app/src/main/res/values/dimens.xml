@@ -33,6 +33,7 @@
     <dimen name="size_img_product_width">140dp</dimen>
     <dimen name="size_img_product_height">180dp</dimen>
     <!--    -->
+    <dimen name="size_img_icon_small">30dp</dimen>
     <dimen name="size_img_icon">40dp</dimen>
     <dimen name="size_img_icon_medium">35dp</dimen>
 

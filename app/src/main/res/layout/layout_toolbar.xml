@@ -2,7 +2,6 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/light_purple"
     android:orientation="vertical">
 
     <com.google.android.material.textview.MaterialTextView
@@ -23,17 +22,15 @@
             android:layout_weight="1" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/size_img_icon_medium"
-            android:layout_height="@dimen/size_img_icon_medium"
+            android:layout_width="@dimen/size_img_icon"
+            android:layout_height="@dimen/size_img_icon"
             android:layout_gravity="center"
-            android:padding="@dimen/space_small"
-            android:src="@drawable/baseline_add_shopping_cart_24" />
+            android:src="@drawable/ic_cart" />
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/size_img_icon_medium"
-            android:layout_height="@dimen/size_img_icon_medium"
+            android:layout_width="@dimen/size_img_icon"
+            android:layout_height="@dimen/size_img_icon"
             android:layout_gravity="center"
-            android:padding="@dimen/space_small"
-            android:src="@drawable/icons_user" />
+            android:src="@drawable/ic_chat" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>
