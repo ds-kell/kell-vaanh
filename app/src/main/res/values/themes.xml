@@ -10,4 +10,15 @@
     <style name="SplashscreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/bg_splashscreen</item>
     </style>
+
+    <!--    -->
+    <style name="Custom.BottomNavigationView" parent="Base.Widget.Material3.BottomNavigationView">
+        <item name="compatShadowEnabled">false</item>
+        <!--        <item name="android:background">@color/light_purple</item>-->
+        <item name="android:minHeight">65dp</item>
+        <item name="itemIconTint">@null</item>
+        <item name="itemPaddingTop">5dp</item>
+        <item name="itemBackground">@null</item>
+        <item name="itemPaddingBottom">12dp</item>
+    </style>
 </resources>

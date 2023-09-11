@@ -104,7 +104,8 @@ dependencies {
     implementation("de.hdodenhof:circleimageview:3.1.0")
 //
     implementation("androidx.core:core-splashscreen:1.0.1")
-//
+}
+dependencies {
     val pagingVersion = "3.2.0"
 
     implementation("androidx.paging:paging-runtime-ktx:$pagingVersion")

@@ -23,7 +23,8 @@
             android:layout_gravity="center"
             android:layout_width="@dimen/size_img_icon_medium"
             android:layout_height="@dimen/size_img_icon_medium"
-            android:src="@drawable/ic_account_circle" />
+            android:src="@{icon}"
+            tools:src="@drawable/ic_account_circle" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_label"

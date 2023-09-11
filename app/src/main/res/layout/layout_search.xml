@@ -35,8 +35,8 @@
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/img_btn_search"
-                android:layout_width="@dimen/size_img_icon"
-                android:layout_height="@dimen/size_img_icon"
+                android:layout_width="@dimen/size_img_icon_small"
+                android:layout_height="@dimen/size_img_icon_small"
                 android:layout_marginEnd="@dimen/space_xsmall"
                 android:background="@drawable/bg_border_right"
                 android:src="@drawable/ic_search"

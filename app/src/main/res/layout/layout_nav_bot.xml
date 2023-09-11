@@ -46,38 +46,36 @@
 
         <include
             android:id="@+id/nav_home"
-            layout="@layout/layout_item_nav_bot_menu"
+            layout="@layout/layout_nav_bot_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:icon="@{icHome}"
-            app:label="@{homeLabel}" />
+            android:layout_weight="1" />
 
         <include
             android:id="@+id/nav_cart"
-            layout="@layout/layout_item_nav_bot_menu"
+            layout="@layout/layout_nav_bot_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:icon="@{icCart}"
+            app:icon="@{@drawable/ic_cart}"
             app:label="@{cartLabel}" />
 
         <include
             android:id="@+id/nav_notification"
-            layout="@layout/layout_item_nav_bot_menu"
+            layout="@layout/layout_nav_bot_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:icon="@{icNotification}"
+            app:icon="@{@drawable/ic_notifications}"
             app:label="@{notificationLabel}" />
 
         <include
             android:id="@+id/nav_account"
-            layout="@layout/layout_item_nav_bot_menu"
+            layout="@layout/layout_nav_bot_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            app:icon="@{icAccount}"
+            app:icon="@{@drawable/ic_account_circle}"
             app:label="@{accountLabel}" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

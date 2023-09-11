@@ -38,7 +38,7 @@ object VaAnhModule {
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl(BASE_URL_HOME)
+        .baseUrl(BASE_URL_CPN)
         .client(okHttpClient)
         .build()
 
