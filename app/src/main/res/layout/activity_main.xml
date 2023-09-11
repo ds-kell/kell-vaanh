@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/layout_coor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/layout_appbar"
@@ -18,22 +20,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.Material3.Light"
-                app:contentScrim="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll"
+                app:contentScrim="@android:color/transparent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:popupTheme="@style/Theme.Material3.Light">
 
                 <include
                     android:id="@+id/layout_header"
                     layout="@layout/layout_header"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    app:layout_collapseMode="parallax" />
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
             <include
                 layout="@layout/layout_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
+                android:layout_height="wrap_content"
+                app:layout_collapseMode="pin" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -58,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.Material3.Light.NoActionBar"
-                app:itemIconSize="@dimen/size_img_icon"
+                app:itemIconSize="@dimen/size_img_icon_medium"
                 app:labelVisibilityMode="labeled"
                 app:menu="@menu/menu_bottom" />
         </androidx.appcompat.widget.LinearLayoutCompat>

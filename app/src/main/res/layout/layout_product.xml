@@ -29,7 +29,6 @@
             android:id="@+id/tv_product_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/space_medium"
             android:ellipsize="end"
             android:maxLines="2"
             android:text="@{product.name}"
@@ -44,7 +43,6 @@
             android:layout_height="wrap_content"
             android:textColor="@color/red"
             android:text="@string/example_price"
-            android:layout_marginStart="@dimen/space_medium"
             app:layout_constraintStart_toStartOf="@id/img_product"
             app:layout_constraintTop_toBottomOf="@+id/tv_product_name"
             tools:text="@string/example_price" />
@@ -54,7 +52,6 @@
             android:layout_width="wrap_content"
             android:text="@string/example_quantity_sold"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_medium"
             app:layout_constraintEnd_toEndOf="@id/img_product"
             app:layout_constraintTop_toBottomOf="@+id/tv_product_name"
             tools:text="@string/example_quantity_sold" />

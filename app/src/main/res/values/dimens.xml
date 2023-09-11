@@ -3,6 +3,7 @@
     <!--    -->
     <dimen name="space_small">3dp</dimen>
     <dimen name="space_xsmall">5dp</dimen>
+    <dimen name="space_xxsmall">8dp</dimen>
     <dimen name="space_medium">10dp</dimen>
     <dimen name="space_xmedium">15dp</dimen>
     <dimen name="space_large">20dp</dimen>
@@ -30,11 +31,12 @@
     <dimen name="dimen_extra">40dp</dimen>
     <dimen name="dimen_xextra">45dp</dimen>
     <!--    -->
-    <dimen name="size_img_product_width">140dp</dimen>
-    <dimen name="size_img_product_height">180dp</dimen>
+    <dimen name="size_img_product_width">180dp</dimen>
+    <dimen name="size_img_product_height">230dp</dimen>
     <!--    -->
     <dimen name="size_img_icon_small">30dp</dimen>
-    <dimen name="size_img_icon">40dp</dimen>
+    <dimen name="size_img_icon_large">40dp</dimen>
+    <dimen name="size_img_icon_extra">50dp</dimen>
     <dimen name="size_img_icon_medium">35dp</dimen>
 
 

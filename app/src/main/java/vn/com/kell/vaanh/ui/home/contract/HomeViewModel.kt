@@ -24,6 +24,12 @@ class HomeViewModel @Inject constructor(
     private fun initData() {
         viewModelScope.launch {
             val response = getProductUseCase.execute()
+//            response.forEach { p ->
+//                if (p.images.isNotEmpty()) {
+//                    p.images[0].url =
+//                        "https://firebasestorage.googleapis.com/v0/b/wibu-web-app.appspot.com/o/images%2F2eab4d35-29a2-41fa-aab1-17eeecc96d1390504261_p0.png?alt=media&token=88ab18ea-3b67-414c-9987-4c60a94424a7"
+//                }
+//            }
             val tmp = mutableListOf<Product>()
             tmp.addAll(response)
             tmp.addAll(response)

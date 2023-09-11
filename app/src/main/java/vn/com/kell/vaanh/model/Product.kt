@@ -42,7 +42,7 @@ data class Discount(
 
 data class Images(
     @SerializedName("id") val id: Long,
-    @SerializedName("url") val url: String,
+    @SerializedName("url") var url: String,
 )/*
 * {
       "id": 1,

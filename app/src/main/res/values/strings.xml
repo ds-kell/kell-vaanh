@@ -49,4 +49,5 @@
     <string name="example_price">1.000.0000</string>
     <string name="example_quantity_sold">2,5k</string>
     <string name="hint_search">Enter to search</string>
+    <string name="kafka">Kafka</string>
 </resources>

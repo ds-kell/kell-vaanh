@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/space_medium"
+        android:layout_marginHorizontal="@dimen/space_medium">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_product"
+            android:layout_width="@dimen/size_img_icon_extra"
+            android:layout_height="@dimen/size_img_icon_extra"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/img_mm_kafka" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            app:layout_constraintEnd_toEndOf="@id/img_product"
+            app:layout_constraintStart_toStartOf="@id/img_product"
+            app:layout_constraintTop_toBottomOf="@+id/img_product"
+            android:text="@string/kafka" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

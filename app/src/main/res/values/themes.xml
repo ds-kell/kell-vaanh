@@ -5,7 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.VaANH" parent="Base.Theme.VaANH" />
+    <style name="Theme.VaANH" parent="Theme.Material3.Light.NoActionBar" />
 
     <style name="SplashscreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/bg_splashscreen</item>
