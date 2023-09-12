@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/space_large"
+        android:orientation="vertical"
+        android:padding="@dimen/space_small">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/space_small"
+            android:background="@drawable/bg_category_icon"
+            android:orientation="vertical"
+            android:padding="@dimen/space_xxsmall">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_product"
+                android:layout_width="@dimen/size_img_icon_large"
+                android:layout_height="@dimen/size_img_icon_large"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/img_mm_kafka" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/kafka" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

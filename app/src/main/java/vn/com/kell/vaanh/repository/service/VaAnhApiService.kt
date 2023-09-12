@@ -5,7 +5,8 @@ import retrofit2.http.*
 import vn.com.kell.vaanh.model.AccountProfile
 import vn.com.kell.vaanh.model.AuthenticationRequest
 import vn.com.kell.vaanh.model.AuthenticationResponse
-import vn.com.kell.vaanh.model.Product
+import vn.com.kell.vaanh.model.ProductDTO
+import vn.com.kell.vaanh.model.ProductDetailDTO
 import vn.com.kell.vaanh.model.ResponseUtils
 import vn.com.kell.vaanh.model.SignUpRequest
 import vn.com.kell.vaanh.model.SignUpResponse
@@ -26,6 +27,9 @@ interface VaAnhApiService {
     @POST("user/profile/update")
     suspend fun updateProfile(): Response<ResponseUtils<AccountProfile>>
 
-    @POST("product/products")
-    suspend fun getProducts(): ResponseUtils<List<Product>>
+    @POST("products")
+    suspend fun getProducts(): ResponseUtils<List<ProductDTO>>
+
+    @GET("products/{id}")
+    suspend fun getProductDetail(@Path("id") id: Int): ResponseUtils<List<ProductDetailDTO>>
 }

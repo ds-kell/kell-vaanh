@@ -10,20 +10,22 @@
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/to_fragment_user_profile"
-            app:destination="@+id/fragment_user_profile" />
-        <action
-            android:id="@+id/to_fragment_cart"
-            app:destination="@id/fragment_cart" />
+            android:id="@+id/to_fragment_product_detail"
+            app:destination="@+id/fragment_product_detail" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_product_detail"
+        android:name="vn.com.kell.vaanh.ui.product.ProductDetailFragment"
+        tools:layout="@layout/fragment_product_detail">
+        <argument
+            android:name="productId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/fragment_user_profile"
         android:name="vn.com.kell.vaanh.ui.user_profile.AccountProfileFragment"
-        tools:layout="@layout/fragment_account_profile">
-        <argument
-            android:name="username"
-            app:argType="string" />
-    </fragment>
+        tools:layout="@layout/fragment_account_profile" />
     <fragment
         android:id="@+id/fragment_cart"
         android:name="vn.com.kell.vaanh.ui.cart.CartFragment"

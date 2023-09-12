@@ -50,4 +50,6 @@
     <string name="example_quantity_sold">2,5k</string>
     <string name="hint_search">Enter to search</string>
     <string name="kafka">Kafka</string>
+    <string name="label_for_you">For you</string>
+    <string name="label_see_all">See all</string>
 </resources>

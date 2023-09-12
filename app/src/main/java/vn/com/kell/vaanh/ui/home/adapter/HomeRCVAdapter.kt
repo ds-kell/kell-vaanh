@@ -6,32 +6,34 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kell.com.example.vaanh.databinding.LayoutProductBinding
-import vn.com.kell.vaanh.model.Product
+import vn.com.kell.vaanh.model.ProductDTO
 
-class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
-    private var listItem: List<Product> = mutableListOf()
+class HomeRCVAdapter(private val onItemClick: (Int) -> Unit) :
+    RecyclerView.Adapter<HomeRCVAdapter.Holder>() {
+    private var listItem: List<ProductDTO> = mutableListOf()
 
-    inner class ViewHolder(val view: LayoutProductBinding) :
+    inner class Holder(val view: LayoutProductBinding) :
         RecyclerView.ViewHolder(view.root) {
         init {
             itemView.setOnClickListener {
-
+                onItemClick(listItem[absoluteAdapterPosition].id)
             }
         }
 
-        fun bind(model: Product, position: Int) {
+        fun bind(model: ProductDTO, position: Int) {
             view.apply {
                 Glide.with(itemView.context)
                     .load(model.images[0].url)
                     .override(400, 500)
                     .centerCrop()
                     .into(imgProduct)
+
                 product = model
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder = Holder(
         LayoutProductBinding.inflate(
             LayoutInflater.from(parent.context), parent, false
         )
@@ -39,12 +41,12 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int = listItem.size
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: Holder, position: Int) {
         holder.bind(listItem[position], position)
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun updateData(newList: List<Product>) {
+    fun updateData(newList: List<ProductDTO>) {
         listItem = newList.toMutableList()
         notifyDataSetChanged()
     }

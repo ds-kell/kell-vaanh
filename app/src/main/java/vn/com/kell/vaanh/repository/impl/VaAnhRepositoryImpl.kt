@@ -4,7 +4,8 @@ import retrofit2.Response
 import vn.com.kell.vaanh.model.AccountProfile
 import vn.com.kell.vaanh.model.AuthenticationRequest
 import vn.com.kell.vaanh.model.AuthenticationResponse
-import vn.com.kell.vaanh.model.Product
+import vn.com.kell.vaanh.model.ProductDTO
+import vn.com.kell.vaanh.model.ProductDetailDTO
 import vn.com.kell.vaanh.model.ResponseUtils
 import vn.com.kell.vaanh.model.SignUpRequest
 import vn.com.kell.vaanh.model.SignUpResponse
@@ -23,5 +24,7 @@ class VaAnhRepositoryImpl @Inject constructor(private val service: VaAnhApiServi
     override suspend fun getProfile(): Response<ResponseUtils<AccountProfile>> =
         service.getProfile()
 
-    override suspend fun getProducts(): ResponseUtils<List<Product>> = service.getProducts()
+    override suspend fun getProducts(): ResponseUtils<List<ProductDTO>> = service.getProducts()
+    override suspend fun getProductDetail(productId: Int): ResponseUtils<List<ProductDetailDTO>> =
+        service.getProductDetail(productId)
 }
