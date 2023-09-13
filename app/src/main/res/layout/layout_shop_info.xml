@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_shop_avt"
+        android:layout_width="@dimen/size_img_shop_avt"
+        android:layout_height="@dimen/size_img_shop_avt"
+        android:src="@drawable/img_mm_kafka"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_shop_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_large"
+        android:text="@string/example_brand"
+        app:layout_constraintStart_toEndOf="@id/img_shop_avt"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_shop_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_large"
+        android:gravity="center"
+        android:text="@string/status_online"
+        app:layout_constraintBottom_toTopOf="@id/tv_shop_address"
+        app:layout_constraintStart_toEndOf="@id/img_shop_avt"
+        app:layout_constraintTop_toBottomOf="@id/tv_shop_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_shop_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_large"
+        android:maxLines="2"
+        android:text="@string/example_address"
+        app:layout_constraintBottom_toBottomOf="@id/img_shop_avt"
+        app:layout_constraintStart_toEndOf="@id/img_shop_avt"
+        tools:text="@string/example_address" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_view_shop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_large"
+        android:text="@string/label_view_shop"
+        android:paddingHorizontal="@dimen/space_medium"
+        android:background="@drawable/bg_border_gray"
+        android:paddingVertical="@dimen/space_small"
+        app:layout_constraintBottom_toBottomOf="@id/img_shop_avt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/img_shop_avt" />
+</androidx.constraintlayout.widget.ConstraintLayout>

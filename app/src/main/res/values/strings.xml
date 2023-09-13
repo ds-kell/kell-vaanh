@@ -53,6 +53,12 @@
     <string name="label_product_price">%sVnđ</string>
     <!--    -->
     <string name="example_product_name">wo nai shi guang huan yu wei yi ao miao, gai shi jie di yi sang hou</string>
-    <string name="example_price">1.000.0000</string>
+    <string name="example_price">1.000.0000 Vnđ</string>
     <string name="example_quantity_sold">2,5k</string>
+    <string name="label_view_shop">View Shop</string>
+    <string name="example_address">Minato, Chuo City, Tokyo</string>
+    <string name="example_brand">Delutsion</string>
+    <string name="status_online">Online</string>
+    <string name="label_from_same_shop">From the same store</string>
+    <string name="label_product_specifications">Product Specifications</string>
 </resources>

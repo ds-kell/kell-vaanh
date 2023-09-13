@@ -35,14 +35,14 @@ class AccountProfileViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-//            val response = getAccountProfileUseCase.execute()
-//            if (response != null) {
-//                if (response.message == "success") {
-//                    stateAccountProfile.value = response.data
-//                } else {
-//                    stateAccountProfile.value = null
-//                }
-//            }
+            val response = getAccountProfileUseCase.execute()
+            if (response != null) {
+                if (response.message == "success") {
+                    stateAccountProfile.value = response.data
+                } else {
+                    stateAccountProfile.value = null
+                }
+            }
         }
     }
 }
