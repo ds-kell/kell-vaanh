@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
+import kell.com.example.vaanh.MainGraphDirections
 import kell.com.example.vaanh.databinding.FragmentHomeBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -31,7 +32,7 @@ class HomeFragment : Fragment() {
         return FragmentHomeBinding.inflate(layoutInflater).apply {
             val adapter = HomeRCVAdapter(onItemClick = { productId ->
                 findNavController().navigate(
-                    HomeFragmentDirections.toFragmentProductDetail(
+                    MainGraphDirections.toFragmentProductDetail(
                         productId
                     )
                 )

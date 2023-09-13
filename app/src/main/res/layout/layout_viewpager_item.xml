@@ -4,14 +4,15 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/white"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/img_product_img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="centerInside"
             android:adjustViewBounds="true"
+            android:scaleType="centerInside"
             android:src="@drawable/img_mm_kafka" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </layout>

@@ -35,7 +35,6 @@
     <!---->
     <string name="gender">Gender</string>
     <!--    -->
-
     <string name="blink">BLINK</string>
     <string name="clockwise">ROTATE</string>
     <string name="fade">FADE</string>
@@ -45,11 +44,15 @@
     <string name="stop_animation">STOP ANIMATION</string>
     <string name="course_rating">Course Rating</string>
     <string name="course_name">Course Name</string>
+    <!--    -->
     <string name="run">Run</string>
-    <string name="example_price">1.000.0000</string>
-    <string name="example_quantity_sold">2,5k</string>
     <string name="hint_search">Enter to search</string>
     <string name="kafka">Kafka</string>
     <string name="label_for_you">For you</string>
     <string name="label_see_all">See all</string>
+    <string name="label_product_price">%sVnđ</string>
+    <!--    -->
+    <string name="example_product_name">wo nai shi guang huan yu wei yi ao miao, gai shi jie di yi sang hou</string>
+    <string name="example_price">1.000.0000</string>
+    <string name="example_quantity_sold">2,5k</string>
 </resources>

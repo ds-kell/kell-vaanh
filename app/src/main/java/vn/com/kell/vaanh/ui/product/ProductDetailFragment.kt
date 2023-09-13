@@ -7,12 +7,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import dagger.hilt.android.AndroidEntryPoint
+import kell.com.example.vaanh.MainGraphDirections
 import kell.com.example.vaanh.databinding.FragmentProductDetailBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import vn.com.kell.vaanh.model.Image
+import vn.com.kell.vaanh.ui.home.adapter.HomeRCVAdapter
 import vn.com.kell.vaanh.ui.product.adapter.ProductSnapHelperAdapter
 import vn.com.kell.vaanh.ui.product.adapter.ProductViewPagerAdapter
 import vn.com.kell.vaanh.ui.product.contract.ProductDetailViewModel
@@ -30,12 +38,12 @@ class ProductDetailFragment : Fragment() {
             val productId = args.productId
             viewModel.getProductId(productId)
             val pagerAdapter = ProductViewPagerAdapter()
-            viewPagerProductImages.adapter = pagerAdapter
-            viewPagerProductImages.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+            vpgProductImages.adapter = pagerAdapter
+            vpgProductImages.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
             val currentPageIndex = 1
-            viewPagerProductImages.currentItem = currentPageIndex
-            viewPagerProductImages.registerOnPageChangeCallback(
+            vpgProductImages.currentItem = currentPageIndex
+            vpgProductImages.registerOnPageChangeCallback(
                 object : ViewPager2.OnPageChangeCallback() {
                     override fun onPageSelected(position: Int) {
                         super.onPageSelected(position)
@@ -43,13 +51,45 @@ class ProductDetailFragment : Fragment() {
                 }
             )
 
-            val helperAdapter = ProductSnapHelperAdapter()
+            val rcvSnapAdapter = ProductSnapHelperAdapter()
+            rcvProductImages.adapter = rcvSnapAdapter
+            rcvProductImages.layoutManager =
+                LinearLayoutManager(context, RecyclerView.HORIZONTAL, false);
+            val centerSnapHelperAdapter = LinearSnapHelper()
+            centerSnapHelperAdapter.attachToRecyclerView(rcvProductImages)
             viewLifecycleOwner.lifecycleScope.launch {
                 viewModel.getProductDetail().collectLatest { dtos ->
                     val images = dtos.flatMap { it.productDTO.images }
-                    pagerAdapter.updateData(images)
+                    val tmp: MutableList<Image> = mutableListOf()
+                    tmp.addAll(images)
+                    tmp.addAll(images)
+                    tmp.addAll(images)
+                    pagerAdapter.updateData(tmp)
+                    rcvSnapAdapter.updateData(tmp)
+                    productFirst = dtos.firstOrNull()
+
+                }
+            }
+            val adapter = HomeRCVAdapter(onItemClick = { productId ->
+                findNavController().navigate(
+                    MainGraphDirections.toFragmentProductDetail(
+                        productId
+                    )
+                )
+            }).also { adapter ->
+                rcvProducts.adapter = adapter
+                rcvProducts.layoutManager = GridLayoutManager(context, 2)
+            }
+            viewLifecycleOwner.lifecycleScope.launch {
+                viewModel.getProducts().collectLatest {
+                    adapter.updateData(it)
                 }
             }
         }.root
     }
 }
+
+/*
+*  (activity as MainActivity).apply {
+
+        }*/
