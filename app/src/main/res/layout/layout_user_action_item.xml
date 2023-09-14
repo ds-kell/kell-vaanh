@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_chat"
+        android:layout_width="@dimen/size_img_icon_extra"
+        android:layout_height="@dimen/size_img_icon_extra"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/dimen_xsmall"
+        android:src="@drawable/ic_chat" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_chat_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_xlarge"
+        android:text="@string/label_chat_now" />
+
+</FrameLayout>

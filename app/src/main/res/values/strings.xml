@@ -45,12 +45,17 @@
     <string name="course_rating">Course Rating</string>
     <string name="course_name">Course Name</string>
     <!--    -->
+    <string name="colon">:</string>
     <string name="run">Run</string>
     <string name="hint_search">Enter to search</string>
     <string name="kafka">Kafka</string>
     <string name="label_for_you">For you</string>
     <string name="label_see_all">See all</string>
     <string name="label_product_price">%sVnđ</string>
+    <string name="label_products">Products:</string>
+    <string name="label_ratings">Ratings:</string>
+    <string name="label_response_rate">Response Rate:</string>
+
     <!--    -->
     <string name="example_product_name">wo nai shi guang huan yu wei yi ao miao, gai shi jie di yi sang hou</string>
     <string name="example_price">1.000.0000 Vnđ</string>
@@ -59,6 +64,9 @@
     <string name="example_address">Minato, Chuo City, Tokyo</string>
     <string name="example_brand">Delutsion</string>
     <string name="status_online">Online</string>
-    <string name="label_from_same_shop">From the same store</string>
+    <string name="label_from_same_shop">From the same shop</string>
     <string name="label_product_specifications">Product Specifications</string>
+    <string name="label_chat_now">Chat now</string>
+    <string name="label_add_to_cart">Add to Cart</string>
+    <string name="by_by_with_voucher">Buy with Voucher</string>
 </resources>

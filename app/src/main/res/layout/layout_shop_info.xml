@@ -13,11 +13,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_status"
+        android:layout_width="@dimen/size_img_icon_small"
+        android:layout_height="@dimen/size_img_icon_small"
+        android:padding="@dimen/space_xsmall"
+        android:src="@drawable/ic_dot_status"
+        app:layout_constraintBottom_toBottomOf="@id/img_shop_avt"
+        app:layout_constraintStart_toStartOf="@id/tv_shop_name"
+        app:layout_constraintTop_toTopOf="@id/img_shop_avt" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_location"
+        android:layout_width="@dimen/size_img_icon_small"
+        android:layout_height="@dimen/size_img_icon_small"
+        android:src="@drawable/ic_location"
+        app:layout_constraintStart_toStartOf="@id/tv_shop_name"
+        app:layout_constraintTop_toBottomOf="@id/img_status" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_shop_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_large"
+        android:paddingStart="@dimen/space_medium"
         android:text="@string/example_brand"
         app:layout_constraintStart_toEndOf="@id/img_shop_avt"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,22 +44,22 @@
         android:id="@+id/tv_shop_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_large"
+        android:layout_marginStart="@dimen/space_small"
         android:gravity="center"
         android:text="@string/status_online"
         app:layout_constraintBottom_toTopOf="@id/tv_shop_address"
-        app:layout_constraintStart_toEndOf="@id/img_shop_avt"
+        app:layout_constraintStart_toEndOf="@id/img_status"
         app:layout_constraintTop_toBottomOf="@id/tv_shop_name" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_shop_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/space_large"
+        android:layout_marginStart="@dimen/space_small"
         android:maxLines="2"
         android:text="@string/example_address"
         app:layout_constraintBottom_toBottomOf="@id/img_shop_avt"
-        app:layout_constraintStart_toEndOf="@id/img_shop_avt"
+        app:layout_constraintStart_toEndOf="@id/img_location"
         tools:text="@string/example_address" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -49,11 +67,39 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/space_large"
-        android:text="@string/label_view_shop"
-        android:paddingHorizontal="@dimen/space_medium"
         android:background="@drawable/bg_border_gray"
+        android:paddingHorizontal="@dimen/space_medium"
         android:paddingVertical="@dimen/space_small"
+        android:text="@string/label_view_shop"
         app:layout_constraintBottom_toBottomOf="@id/img_shop_avt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/img_shop_avt" />
+
+    <include
+        android:id="@+id/layout_number_product"
+        layout="@layout/layout_simple_item"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/space_xxsmall"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_shop_avt" />
+
+    <include
+        android:id="@+id/layout_ratings"
+        layout="@layout/layout_simple_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/layout_response_rate"
+        app:layout_constraintStart_toEndOf="@id/layout_number_product"
+        app:layout_constraintTop_toTopOf="@id/layout_number_product" />
+
+    <include
+        android:id="@+id/layout_response_rate"
+        layout="@layout/layout_simple_item"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="@dimen/space_medium"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/layout_ratings" />
 </androidx.constraintlayout.widget.ConstraintLayout>

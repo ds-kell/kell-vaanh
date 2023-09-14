@@ -1,9 +1,12 @@
 package vn.com.kell.vaanh.ui.main
 
+import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.FloatingWindow
@@ -32,25 +35,44 @@ class MainActivity : AppCompatActivity() {
         setContentView(ActivityMainBinding.inflate(layoutInflater).apply {
             navController = getNavController()
             navBottom.setupWithNavController(navController)
+
             navController.let { controller ->
                 controller.addOnDestinationChangedListener { controller, destination, _ ->
                     if (destination is FloatingWindow) return@addOnDestinationChangedListener
                     val visible =
                         idsRoot.firstOrNull { it == controller.currentDestination?.id } != null
-                    layoutCollapsingToolbar.visibility = if (visible) View.VISIBLE else View.GONE
-                    layoutToolbar.visibility = if (visible) View.VISIBLE else View.GONE
-                    navBottom.visibility = if (visible) View.VISIBLE else View.GONE
+                    val stateShow = if (visible) View.VISIBLE else View.GONE
+                    layoutCollapsingToolbar.visibility = stateShow
+                    layoutToolbar.visibility = stateShow
+                    navBottom.visibility = stateShow
+
                     layoutToolbar2.apply {
                         layoutCt.visibility = if (visible) View.GONE else View.VISIBLE
-                        imgArrow.setOnClickListener {
-                            navController.navigateUp()
-                        }
+                        layoutUserAction.visibility = if (visible) View.GONE else View.VISIBLE
                     }
                 }
             }
+            layoutToolbar2.apply {
+                imgArrow.setOnClickListener {
+                    hideKeyboard()
+                    onBackPressedDispatcher.onBackPressed()
+                    layoutSearch.apply {
+                        edtSearchContent.clearText()
+                    }
+                }
+
+            }
         }.root)
 
+    }
 
+    private fun hideKeyboard() {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val currentFocusView = currentFocus
+        if (currentFocusView != null) {
+            imm.hideSoftInputFromWindow(currentFocusView.windowToken, 0)
+            currentFocusView.clearFocus()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -61,6 +83,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
     }
+
 
     fun headerStatus() {
 
@@ -79,4 +102,9 @@ class MainActivity : AppCompatActivity() {
 
     fun FragmentActivity.dispatchBackPressed() = onBackPressedDispatcher.onBackPressed()
 
+
+}
+
+fun EditText.clearText() {
+    this.text.clear()
 }

@@ -30,10 +30,10 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         return FragmentHomeBinding.inflate(layoutInflater).apply {
-            val adapter = HomeRCVAdapter(onItemClick = { productId ->
+            val adapter = HomeRCVAdapter(onItemClick = { product ->
                 findNavController().navigate(
                     MainGraphDirections.toFragmentProductDetail(
-                        productId
+                        product.id, product.brand.id
                     )
                 )
             }).also { adapter ->

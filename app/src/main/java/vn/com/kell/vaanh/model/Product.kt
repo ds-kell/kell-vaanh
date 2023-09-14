@@ -53,7 +53,7 @@ data class Material(
 
 @Parcelize
 data class Brand(
-    @SerializedName("id") @Expose val id: Long,
+    @SerializedName("id") @Expose val id: Int,
     @SerializedName("name") @Expose val name: String,
     @SerializedName("description") @Expose val description: String,
 ) : Parcelable

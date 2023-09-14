@@ -20,6 +20,7 @@ import kell.com.example.vaanh.databinding.FragmentProductDetailBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import vn.com.kell.vaanh.model.Image
+import vn.com.kell.vaanh.model.ProductDTO
 import vn.com.kell.vaanh.ui.home.adapter.HomeRCVAdapter
 import vn.com.kell.vaanh.ui.product.adapter.ProductSnapHelperAdapter
 import vn.com.kell.vaanh.ui.product.adapter.ProductViewPagerAdapter
@@ -37,6 +38,7 @@ class ProductDetailFragment : Fragment() {
         return FragmentProductDetailBinding.inflate(layoutInflater).apply {
             val productId = args.productId
             viewModel.getProductId(productId)
+            viewModel.getBrandId(args.brandId)
             val pagerAdapter = ProductViewPagerAdapter()
             vpgProductImages.adapter = pagerAdapter
             vpgProductImages.orientation = ViewPager2.ORIENTATION_HORIZONTAL
@@ -70,19 +72,29 @@ class ProductDetailFragment : Fragment() {
 
                 }
             }
-            val adapter = HomeRCVAdapter(onItemClick = { productId ->
+            val adapter = HomeRCVAdapter(onItemClick = { product ->
                 findNavController().navigate(
                     MainGraphDirections.toFragmentProductDetail(
-                        productId
+                        product.id, product.brand.id
                     )
                 )
             }).also { adapter ->
-                rcvProducts.adapter = adapter
-                rcvProducts.layoutManager = GridLayoutManager(context, 2)
+                rcvProductOfBrand.adapter = adapter
+                rcvProductOfBrand.layoutManager = GridLayoutManager(context, 2)
             }
             viewLifecycleOwner.lifecycleScope.launch {
-                viewModel.getProducts().collectLatest {
-                    adapter.updateData(it)
+                viewModel.getProductOfBrand().collectLatest {
+                    val tmp = mutableListOf<ProductDTO>()
+                    tmp.addAll(it)
+                    tmp.addAll(it)
+                    tmp.addAll(it)
+                    tmp.addAll(it)
+                    tmp.addAll(it)
+                    tmp.addAll(it)
+                    tmp.addAll(it)
+                    tmp.addAll(it)
+                    tmp.addAll(it)
+                    adapter.updateData(tmp)
                 }
             }
         }.root

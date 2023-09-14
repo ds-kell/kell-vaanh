@@ -7,9 +7,13 @@ import javax.inject.Inject
 
 class HeaderInterceptor @Inject constructor(tokenManager: TokenManager) :
     Interceptor {
-    private val accessToken = tokenManager.fetchAuthToken()
+    private var accessToken = tokenManager.fetchAuthToken()
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request().newBuilder()
+        accessToken = ""
+        if (accessToken == "") {
+            return chain.proceed(request.build())
+        }
         request.addHeader("Authorization", "Bearer $accessToken")
         return chain.proceed(request.build())
     }

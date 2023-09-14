@@ -62,12 +62,19 @@
                 tools:text="@string/example_price" />
 
             <include
+                android:id="@+id/layout_rating"
+                layout="@layout/layout_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/space_xmedium"
+                android:layout_marginBottom="@dimen/space_large" />
+
+            <include
                 android:id="@+id/layout_shop"
                 layout="@layout/layout_shop_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_medium"
-                android:layout_marginTop="@dimen/space_large"
+                android:layout_marginHorizontal="@dimen/space_xmedium"
                 android:layout_marginBottom="@dimen/space_large" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -97,7 +104,7 @@
                 tools:text="@string/label_from_same_shop" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcv_products"
+                android:id="@+id/rcv_product_of_brand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"

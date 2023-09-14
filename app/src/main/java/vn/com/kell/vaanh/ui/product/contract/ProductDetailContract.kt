@@ -7,6 +7,8 @@ import vn.com.kell.vaanh.model.ProductDetailDTO
 interface ProductDetailContract {
     fun getProductDetail(): StateFlow<List<ProductDetailDTO>>
     fun getProductId(productId: Int)
-    fun getProducts(): StateFlow<List<ProductDTO>>
 
+    fun getBrandId(brandId: Int)
+    fun getProducts(): StateFlow<List<ProductDTO>>
+    fun getProductOfBrand(): StateFlow<List<ProductDTO>>
 }

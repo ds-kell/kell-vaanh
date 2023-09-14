@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import kell.com.example.vaanh.databinding.LayoutProductBinding
 import vn.com.kell.vaanh.model.ProductDTO
 
-class HomeRCVAdapter(private val onItemClick: (Int) -> Unit) :
+class HomeRCVAdapter(private val onItemClick: (ProductDTO) -> Unit) :
     RecyclerView.Adapter<HomeRCVAdapter.Holder>() {
     private var listItem: List<ProductDTO> = mutableListOf()
 
@@ -16,7 +16,7 @@ class HomeRCVAdapter(private val onItemClick: (Int) -> Unit) :
         RecyclerView.ViewHolder(view.root) {
         init {
             itemView.setOnClickListener {
-                onItemClick(listItem[absoluteAdapterPosition].id)
+                onItemClick(listItem[absoluteAdapterPosition])
             }
         }
 

@@ -15,6 +15,9 @@
         <argument
             android:name="productId"
             app:argType="integer" />
+        <argument
+            android:name="brandId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/fragment_user_profile"

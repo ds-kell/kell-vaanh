@@ -16,4 +16,5 @@ interface VaAnhRepository {
     suspend fun getProfile(): Response<ResponseUtils<AccountProfile>>
     suspend fun getProducts(): ResponseUtils<List<ProductDTO>>
     suspend fun getProductDetail(productId: Int): ResponseUtils<List<ProductDetailDTO>>
+    suspend fun getProductOfBrand(brandId: Int): ResponseUtils<List<ProductDTO>>
 }
