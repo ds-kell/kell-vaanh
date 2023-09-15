@@ -25,9 +25,14 @@ class VaAnhRepositoryImpl @Inject constructor(private val service: VaAnhApiServi
         service.getProfile()
 
     override suspend fun getProducts(): ResponseUtils<List<ProductDTO>> = service.getProducts()
+
     override suspend fun getProductDetail(productId: Int): ResponseUtils<List<ProductDetailDTO>> =
         service.getProductDetail(productId)
 
     override suspend fun getProductOfBrand(brandId: Int): ResponseUtils<List<ProductDTO>> =
         service.getProductOfBrand(brandId)
+
+    override suspend fun refreshAuthenticationToken(refreshToken: String): ResponseUtils<AuthenticationResponse> =
+        service.refreshAuthenticationToken(refreshToken)
+
 }

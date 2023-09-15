@@ -69,4 +69,7 @@
     <string name="label_chat_now">Chat now</string>
     <string name="label_add_to_cart">Add to Cart</string>
     <string name="by_by_with_voucher">Buy with Voucher</string>
+    <string name="label_product_description">Product Description</string>
+    <string name="label_product_ratings">Product Ratings</string>
+    <string name="label_sold">99 Sold</string>
 </resources>

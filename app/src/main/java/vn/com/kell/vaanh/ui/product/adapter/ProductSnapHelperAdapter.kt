@@ -10,12 +10,18 @@ import kell.com.example.vaanh.R
 import kell.com.example.vaanh.databinding.LayoutSnaphelperItemBinding
 import vn.com.kell.vaanh.model.Image
 
-class ProductSnapHelperAdapter :
+class ProductSnapHelperAdapter(private val selectItem: (model: Image, position: Int) -> Unit) :
     RecyclerView.Adapter<ProductSnapHelperAdapter.Holder>() {
     private var listItem: List<Image> = emptyList()
 
     inner class Holder(val binding: LayoutSnaphelperItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                selectItem(listItem[absoluteAdapterPosition], absoluteAdapterPosition)
+            }
+        }
 
         fun bind(image: Image) {
             Glide.with(binding.root.context)

@@ -26,14 +26,9 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="@dimen/size_img_icon_medium"
             android:layout_height="@dimen/size_img_icon_medium"
+            android:padding="@dimen/space_small"
             android:layout_gravity="center"
-            android:src="@drawable/ic_cart" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="@dimen/size_img_icon_medium"
-            android:layout_height="@dimen/size_img_icon_medium"
-            android:layout_gravity="center"
-            android:layout_marginEnd="@dimen/space_small"
+            android:layout_marginEnd="@dimen/space_xsmall"
             android:src="@drawable/ic_chat" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>

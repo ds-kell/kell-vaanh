@@ -15,8 +15,8 @@ interface VaAnhApiService {
     @POST("auth/login")
     suspend fun login(@Body request: AuthenticationRequest): ResponseUtils<AuthenticationResponse>
 
-//    @GET("auth/refresh")
-//    suspend fun refreshToken(@Header("Authorization") token: String, ): Response<AuthenticationResponse>
+    @GET("auth/refresh")
+    suspend fun refreshAuthenticationToken(@Header("Authorization") refreshToken: String): ResponseUtils<AuthenticationResponse>
 
     @POST("auth/signup")
     suspend fun signUp(@Body request: SignUpRequest): Response<SignUpResponse>

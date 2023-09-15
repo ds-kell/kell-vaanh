@@ -9,18 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import dagger.hilt.android.AndroidEntryPoint
 import vn.com.kell.vaanh.ui.authentication.AuthActivity
 import vn.com.kell.vaanh.ui.main.MainActivity
-import kotlin.random.Random
 
 @SuppressLint("CustomSplashScreen")
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_splash)
-        var ok = Random.nextInt(0, 2)
-        ok = 1
         Handler(Looper.getMainLooper()).postDelayed({
-            if (ok == 0) {
+            if (false) {
                 val intent = Intent(this@SplashActivity, AuthActivity::class.java)
                 startActivity(intent)
                 finish()

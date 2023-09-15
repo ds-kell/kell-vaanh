@@ -30,16 +30,16 @@ class AccountProfileFragment : Fragment() {
                     accountProfile = it
                     if (it != null) {
                         Glide.with(this@AccountProfileFragment)
-                            .load(it.avatarUrl)
+                            .load("https://firebasestorage.googleapis.com/v0/b/wibu-web-app.appspot.com/o/images%2F2759ce1d-0863-4ef4-b0e2-e5904413e6c086182186_p0.png?alt=media&token=c85a4075-a319-46ea-bf9a-5a50befbfb9a")
                             .centerCrop()
-                            .into(imgAvatar)
+                            .into(layoutHeaderAccount.imgUserAvt)
                     }
 
                 }
             }
-            btnUpdateProfile.setOnClickListener {
-                viewModel.statusUpdate()
-            }
+//            btnUpdateProfile.setOnClickListener {
+//                viewModel.statusUpdate()
+//            }
         }.root
     }
 }

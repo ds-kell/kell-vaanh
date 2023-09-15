@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 import vn.com.kell.vaanh.interator.GetProductDetailUseCase
 import vn.com.kell.vaanh.interator.GetProductOfBrandUseCase
 import vn.com.kell.vaanh.interator.GetProductUseCase
+import vn.com.kell.vaanh.model.Image
 import vn.com.kell.vaanh.model.ProductDTO
 import vn.com.kell.vaanh.model.ProductDetailDTO
 import javax.inject.Inject
@@ -36,6 +37,13 @@ class ProductDetailViewModel @Inject constructor(
     }.stateIn(viewModelScope, SharingStarted.Eagerly, emptyList())
 
     override fun getProductDetail(): StateFlow<List<ProductDetailDTO>> = stateProductDetail
+
+    private val stateImageSelection = MutableStateFlow<Image?>(null)
+
+    override val getImageSelection: StateFlow<Image?> = stateImageSelection
+    override fun setImageSelection(image: Image) {
+        stateImageSelection.value = image
+    }
 
     override fun getProductId(productId: Int) {
         stateProduct.value = productId

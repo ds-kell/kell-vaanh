@@ -46,9 +46,14 @@ class MainActivity : AppCompatActivity() {
                     layoutToolbar.visibility = stateShow
                     navBottom.visibility = stateShow
 
+
                     layoutToolbar2.apply {
                         layoutCt.visibility = if (visible) View.GONE else View.VISIBLE
                         layoutUserAction.visibility = if (visible) View.GONE else View.VISIBLE
+                    }
+
+                    if (controller.currentDestination?.id == R.id.fragment_user_profile || controller.currentDestination?.id == R.id.fragment_cart) {
+                        layoutToolbar.visibility = View.GONE
                     }
                 }
             }
@@ -60,7 +65,6 @@ class MainActivity : AppCompatActivity() {
                         edtSearchContent.clearText()
                     }
                 }
-
             }
         }.root)
 
