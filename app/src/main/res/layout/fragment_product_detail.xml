@@ -10,134 +10,79 @@
             type="vn.com.kell.vaanh.ui.product.contract.ProductDetailViewModel" />
 
         <variable
-            name="productFirst"
+            name="product"
             type="vn.com.kell.vaanh.model.ProductDetailDTO" />
     </data>
 
-    <androidx.core.widget.NestedScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/layout_user_action"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/vpg_product_images"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/size_product_img_vpg"
-                android:background="@android:color/transparent" />
+                android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcv_product_images"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:itemCount="10"
-                tools:listitem="@layout/layout_snaphelper_item" />
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/vpg_product_images"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_product_img_vpg"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_product_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_xmedium"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="@{productFirst.productDTO.name}"
-                android:textSize="@dimen/font_medium"
-                tools:text="@string/example_product_name" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_product_images"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/vpg_product_images"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/layout_snaphelper_item" />
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_product_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_xmedium"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="@{String.format(@string/label_product_price, productFirst.price)}"
-                android:textColor="@color/red"
-                android:textSize="@dimen/font_xmedium"
-                tools:text="@string/example_price" />
+                <include
+                    android:id="@+id/layout_info_product"
+                    layout="@layout/layout_info_product"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rcv_product_images" />
 
-            <include
-                android:id="@+id/layout_rating"
-                layout="@layout/layout_rating_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_xmedium"
-                android:layout_marginBottom="@dimen/space_large" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_product_of_brand"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layout_info_product"
+                    app:spanCount="2"
+                    tools:itemCount="20"
+                    tools:listitem="@layout/layout_product" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
 
-            <include
-                android:id="@+id/layout_shop"
-                layout="@layout/layout_shop_info"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_xmedium"
-                android:layout_marginBottom="@dimen/space_large" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_product_specifications"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_xmedium"
-                android:layout_marginBottom="@dimen/space_medium"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="@string/label_product_specifications"
-                android:textSize="@dimen/font_xmedium"
-                android:textStyle="bold"
-                tools:text="@string/label_product_specifications" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_product_description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_xmedium"
-                android:layout_marginBottom="@dimen/space_medium"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="@string/label_product_description"
-                android:textSize="@dimen/font_xmedium"
-                android:textStyle="bold"
-                tools:text="@string/label_product_description" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_product_ratings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_xmedium"
-                android:layout_marginBottom="@dimen/space_medium"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="@string/label_product_ratings"
-                android:textSize="@dimen/font_xmedium"
-                android:textStyle="bold"
-                tools:text="@string/label_product_ratings" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_other_product"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/space_xmedium"
-                android:layout_marginBottom="@dimen/space_medium"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="@string/label_from_same_shop"
-                android:textSize="@dimen/font_xmedium"
-                android:textStyle="bold"
-                tools:text="@string/label_from_same_shop" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcv_product_of_brand"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="2"
-                tools:itemCount="20"
-                tools:listitem="@layout/layout_product" />
-        </androidx.appcompat.widget.LinearLayoutCompat>
-    </androidx.core.widget.NestedScrollView>
+        <include
+            android:id="@+id/layout_user_action"
+            layout="@layout/layout_user_action"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,11 +1,11 @@
 package vn.com.kell.vaanh.ui.authentication.login.contract
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import vn.com.kell.vaanh.common.VaViewModel
 import vn.com.kell.vaanh.interator.LoginUseCase
 import vn.com.kell.vaanh.model.AuthenticationRequest
 import vn.com.kell.vaanh.utils.TokenManager
@@ -15,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class LogInViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase, private val tokenManager: TokenManager
-) : ViewModel(), LogInContract {
+) : VaViewModel(), LogInContract {
 
     private val stateUsername = MutableStateFlow("")
     private val statePassword = MutableStateFlow("")
@@ -51,7 +51,7 @@ class LogInViewModel @Inject constructor(
         if (stateUsername.value == "" || statePassword.value == "") {
             stateMessage.value = "Please enter all information"
         } else {
-            viewModelScope.launch {
+            vaViewModelScope{
                 loginUseCase.execute(
                     AuthenticationRequest(
                         stateUsername.value,

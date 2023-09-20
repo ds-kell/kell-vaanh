@@ -19,15 +19,15 @@
             android:layout_marginVertical="@dimen/space_small"
             android:background="@drawable/bg_category_icon"
             android:orientation="vertical"
-            android:padding="@dimen/space_xxsmall">
+            android:padding="@dimen/space_xsmall">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/img_product"
-                android:layout_width="@dimen/size_img_icon_large"
-                android:layout_height="@dimen/size_img_icon_large"
+                android:layout_width="@dimen/size_img_icon_xlarge"
+                android:layout_height="@dimen/size_img_icon_xlarge"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                tools:src="@drawable/img_mm_kafka" />
+                android:src="@drawable/img_mm_kafka" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.AppCompatTextView

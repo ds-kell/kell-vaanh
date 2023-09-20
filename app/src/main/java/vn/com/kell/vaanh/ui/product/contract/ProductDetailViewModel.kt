@@ -1,6 +1,5 @@
 package vn.com.kell.vaanh.ui.product.contract
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -8,7 +7,7 @@ import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
+import vn.com.kell.vaanh.common.VaViewModel
 import vn.com.kell.vaanh.interator.GetProductDetailUseCase
 import vn.com.kell.vaanh.interator.GetProductOfBrandUseCase
 import vn.com.kell.vaanh.interator.GetProductUseCase
@@ -23,7 +22,7 @@ class ProductDetailViewModel @Inject constructor(
     private val getProductUseCase: GetProductUseCase,
     private val getProductOfBrandUseCase: GetProductOfBrandUseCase
 ) :
-    ViewModel(), ProductDetailContract {
+    ProductDetailContract, VaViewModel() {
     private val stateProduct = MutableStateFlow<Int?>(null)
     private val stateBrandId = MutableStateFlow<Int?>(null)
     private val stateProductOfBrand: StateFlow<List<ProductDTO>> = stateBrandId.map {
@@ -60,7 +59,7 @@ class ProductDetailViewModel @Inject constructor(
     }
 
     private fun initData() {
-        viewModelScope.launch {
+        vaViewModelScope {
             val response = getProductUseCase.execute()
             val tmp = mutableListOf<ProductDTO>()
             tmp.addAll(response)

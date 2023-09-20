@@ -72,4 +72,7 @@
     <string name="label_product_description">Product Description</string>
     <string name="label_product_ratings">Product Ratings</string>
     <string name="label_sold">99 Sold</string>
+    <string name="label_check_out">Check out</string>
+    <string name="label_select_all">Select all</string>
+    <string name="label_total">Total(%d item):</string>
 </resources>

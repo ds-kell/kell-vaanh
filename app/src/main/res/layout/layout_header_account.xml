@@ -25,7 +25,7 @@
             android:layout_marginTop="@dimen/space_medium"
             android:layout_marginEnd="@dimen/space_medium"
             android:padding="@dimen/space_small"
-            android:src="@drawable/ic_shipping"
+            android:src="@drawable/ic_chat"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -1,11 +1,9 @@
 package vn.com.kell.vaanh.ui.user_profile.contract
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
+import vn.com.kell.vaanh.common.VaViewModel
 import vn.com.kell.vaanh.interator.GetAccountProfileUseCase
 import vn.com.kell.vaanh.model.AccountProfile
 import javax.inject.Inject
@@ -14,7 +12,7 @@ import javax.inject.Inject
 class AccountProfileViewModel @Inject constructor(
     private val getAccountProfileUseCase: GetAccountProfileUseCase,
 ) :
-    ViewModel(), AccountProfileContract {
+    VaViewModel(), AccountProfileContract {
 
     private val stateAccountProfile = MutableStateFlow<AccountProfile?>(
         AccountProfile(
@@ -34,7 +32,7 @@ class AccountProfileViewModel @Inject constructor(
     }
 
     init {
-        viewModelScope.launch {
+        vaViewModelScope {
             val response = getAccountProfileUseCase.execute()
             if (response != null) {
                 if (response.message == "success") {

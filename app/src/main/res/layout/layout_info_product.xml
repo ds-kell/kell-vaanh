@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="productFirst"
+            type="vn.com.kell.vaanh.model.ProductDetailDTO" />
+
+        <variable
+            name="productName"
+            type="String" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_xmedium"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{productFirst.productDTO.name}"
+            android:textSize="@dimen/font_medium"
+            tools:text="@string/example_product_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_xmedium"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{String.format(@string/label_product_price, productFirst.price)}"
+            android:textColor="@color/red"
+            android:textSize="@dimen/font_xmedium"
+            tools:text="@string/example_price" />
+
+        <include
+            android:id="@+id/layout_rating"
+            layout="@layout/layout_rating_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_xmedium"
+            android:layout_marginBottom="@dimen/space_large" />
+
+        <include
+            android:id="@+id/layout_shop"
+            layout="@layout/layout_shop_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_xmedium"
+            android:layout_marginBottom="@dimen/space_large" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_specifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_xmedium"
+            android:layout_marginBottom="@dimen/space_medium"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/label_product_specifications"
+            android:textSize="@dimen/font_xmedium"
+            android:textStyle="bold"
+            tools:text="@string/label_product_specifications" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_xmedium"
+            android:layout_marginBottom="@dimen/space_medium"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/label_product_description"
+            android:textSize="@dimen/font_xmedium"
+            android:textStyle="bold"
+            tools:text="@string/label_product_description" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_product_ratings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_xmedium"
+            android:layout_marginBottom="@dimen/space_medium"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/label_product_ratings"
+            android:textSize="@dimen/font_xmedium"
+            android:textStyle="bold"
+            tools:text="@string/label_product_ratings" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_other_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_xmedium"
+            android:layout_marginBottom="@dimen/space_medium"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@string/label_from_same_shop"
+            android:textSize="@dimen/font_xmedium"
+            android:textStyle="bold"
+            tools:text="@string/label_from_same_shop" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

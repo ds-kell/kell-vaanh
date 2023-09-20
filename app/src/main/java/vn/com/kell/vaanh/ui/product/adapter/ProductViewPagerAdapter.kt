@@ -22,7 +22,7 @@ class ProductViewPagerAdapter :
                 .load(image.url)
                 .error(R.drawable.ic_baseline_error_outline_24)
                 .transition(DrawableTransitionOptions.withCrossFade())
-                .into(binding.imgProductImg)
+                .into(binding.imgProduct)
         }
 
     }

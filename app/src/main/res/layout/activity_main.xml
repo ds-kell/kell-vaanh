@@ -70,12 +70,6 @@
                 app:itemIconSize="@dimen/size_img_icon_medium"
                 app:labelVisibilityMode="labeled"
                 app:menu="@menu/menu_bottom" />
-
-            <include
-                android:id="@+id/layout_user_action"
-                layout="@layout/layout_user_action"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 

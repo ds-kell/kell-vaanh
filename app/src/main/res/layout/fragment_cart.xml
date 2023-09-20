@@ -1,26 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_mommy"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_item_in_cart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/checkbox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:itemCount="10"
+            tools:listitem="@layout/layout_item_in_cart" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:adjustViewBounds="true"
-            android:src="@drawable/img_raiden_kafka" />
+            android:text="@string/label_select_all"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_run"
-            android:layout_width="match_parent"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/space_extra"
-            android:layout_marginHorizontal="@dimen/font_large"
-            android:text="@string/run" />
-    </androidx.appcompat.widget.LinearLayoutCompat>
+            android:gravity="center"
+            android:text="@{String.format(@string/label_total, 10)}"
+            app:layout_constraintEnd_toStartOf="@id/tv_check_out"
+            app:layout_constraintTop_toTopOf="@id/tv_check_out"
+            tools:text="@string/label_total" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_total_payment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/label_product_price, 10000000)}"
+            android:textColor="@color/red"
+            android:textSize="@dimen/font_medium"
+            app:layout_constraintEnd_toStartOf="@id/tv_check_out"
+            app:layout_constraintTop_toBottomOf="@id/tv_total"
+            tools:text="@string/example_price" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_check_out"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:paddingHorizontal="@dimen/space_extra"
+            android:text="@string/label_check_out"
+            app:layout_constraintBottom_toBottomOf="@id/checkbox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/checkbox" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

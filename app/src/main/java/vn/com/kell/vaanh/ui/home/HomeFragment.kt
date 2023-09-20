@@ -15,7 +15,7 @@ import kell.com.example.vaanh.MainGraphDirections
 import kell.com.example.vaanh.databinding.FragmentHomeBinding
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import vn.com.kell.vaanh.ui.home.adapter.HomeAdapter2
+import vn.com.kell.vaanh.ui.home.adapter.CategoryHomeAdapter
 import vn.com.kell.vaanh.ui.home.adapter.HomeRCVAdapter
 import vn.com.kell.vaanh.ui.home.contract.HomeViewModel
 
@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         return FragmentHomeBinding.inflate(layoutInflater).apply {
-            val adapter = HomeRCVAdapter(onItemClick = { product ->
+            val productAdapter = HomeRCVAdapter(onItemClick = { product ->
                 findNavController().navigate(
                     MainGraphDirections.toFragmentProductDetail(
                         product.id, product.brand.id
@@ -40,15 +40,14 @@ class HomeFragment : Fragment() {
                 rcvProducts.adapter = adapter
                 rcvProducts.layoutManager = GridLayoutManager(context, 2)
             }
-            val adapter2 = HomeAdapter2().also { adapter2 ->
-                rcvProductsX.adapter = adapter2
-                rcvProductsX.layoutManager =
+            val categoryAdapter = CategoryHomeAdapter().also { adapter2 ->
+                rcvHomeCategory.adapter = adapter2
+                rcvHomeCategory.layoutManager =
                     GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, false)
             }
             viewLifecycleOwner.lifecycleScope.launch {
                 viewModel.getProducts().collectLatest {
-                    adapter.updateData(it)
-                    adapter2.updateData(it)
+                    productAdapter.updateData(it)
                 }
             }
 

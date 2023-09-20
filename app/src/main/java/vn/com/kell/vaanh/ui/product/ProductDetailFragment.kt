@@ -84,7 +84,7 @@ class ProductDetailFragment : Fragment() {
                     tmp.addAll(images)
                     pagerAdapter.updateData(tmp)
                     rcvSnapAdapter.updateData(tmp)
-                    productFirst = dtos.firstOrNull()
+                    layoutInfoProduct.productFirst = dtos.firstOrNull()
                 }
             }
             viewLifecycleOwner.lifecycleScope.launch {
@@ -98,6 +98,11 @@ class ProductDetailFragment : Fragment() {
                     tmp.addAll(it)
                     tmp.addAll(it)
                     rcvAdapter.updateData(tmp)
+                }
+            }
+            layoutUserAction.apply {
+                tvBuyNow.setOnClickListener {
+
                 }
             }
         }.root
