@@ -1,12 +1,10 @@
 package vn.com.kell.vaanh.ui.authentication.login.contract
 
-import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 import vn.com.kell.vaanh.common.VaViewModel
-import vn.com.kell.vaanh.interator.LoginUseCase
+import vn.com.kell.vaanh.interator.user.LoginUseCase
 import vn.com.kell.vaanh.model.AuthenticationRequest
 import vn.com.kell.vaanh.utils.TokenManager
 import javax.inject.Inject

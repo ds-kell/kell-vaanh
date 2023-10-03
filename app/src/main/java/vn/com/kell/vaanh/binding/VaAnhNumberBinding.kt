@@ -1,21 +1,16 @@
 package vn.com.kell.vaanh.binding
 
 import kotlinx.coroutines.flow.MutableStateFlow
+import vn.com.kell.vaanh.common.Console
+
 
 class VaAnhNumberBinding {
-    private val stateValue: MutableStateFlow<String> = MutableStateFlow("0")
-    fun setStateValue(value: String) {
-        stateValue.value = "${stateValue.value.toInt() + value.toInt()}"
-    }
+    private val _stateValue = MutableStateFlow(10)
 
-    fun getStateValue(): String {
-        return stateValue.value
-    }
+    val stateValue = _stateValue.value
 
-    fun validation() {
-
-    }
     fun updateStateValue(value: Int) {
-        stateValue.value = "${stateValue.value.toInt() + value}"
+        _stateValue.value += value
+        Console.log(_stateValue.value)
     }
 }

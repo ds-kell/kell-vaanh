@@ -35,4 +35,7 @@ interface VaAnhApiService {
 
     @GET("products/brand/{id}")
     suspend fun getProductOfBrand(@Path("id") id: Int): ResponseUtils<List<ProductDTO>>
+
+    @GET()
+    suspend fun getProductInCart()
 }

@@ -70,32 +70,8 @@ data class Image(
     @SerializedName("id") @Expose val id: Long,
     @SerializedName("url") @Expose var url: String,
 ) : Parcelable
-/*
-* {
-      "id": 1,
-      "code": "cos001",
-      "name": "Bộ cosplay Kirara Genshin Impact",
-      "createdAt": null,
-      "category": {
-        "id": 2,
-        "name": "Quần áo"
-      },
-      "material": {
-        "id": 1,
-        "name": "Vải",
-        "description": null
-      },
-      "brand": {
-        "id": 6,
-        "name": "Miccostumes",
-        "description": null
-      },
-      "discount": {
-        "id": 1,
-        "name": "Ngày hội văn hoá",
-        "value": 10,
-        "startDate": "2023-05-14T08:30:45Z",
-        "endDate": "2023-07-01T08:30:45Z"
-      },
 
-    },*/
+@Parcelize
+data class ProductInCart(
+    val productDTO: ProductDTO,
+) : Parcelable

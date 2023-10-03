@@ -4,7 +4,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import vn.com.kell.vaanh.common.VaViewModel
-import vn.com.kell.vaanh.interator.GetProductUseCase
+import vn.com.kell.vaanh.interator.product.GetProductUseCase
 import vn.com.kell.vaanh.model.ProductDTO
 import javax.inject.Inject
 
@@ -22,11 +22,7 @@ class HomeViewModel @Inject constructor(
     private fun initData() {
         vaViewModelScope {
             val response = getProductUseCase.execute()
-            val tmp = mutableListOf<ProductDTO>()
-            tmp.addAll(response)
-            tmp.addAll(response)
-            tmp.addAll(response)
-            stateProduct.value = tmp
+            stateProduct.value = response
         }
     }
 }

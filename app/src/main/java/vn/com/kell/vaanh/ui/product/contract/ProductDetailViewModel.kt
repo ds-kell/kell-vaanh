@@ -8,9 +8,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import vn.com.kell.vaanh.common.VaViewModel
-import vn.com.kell.vaanh.interator.GetProductDetailUseCase
-import vn.com.kell.vaanh.interator.GetProductOfBrandUseCase
-import vn.com.kell.vaanh.interator.GetProductUseCase
+import vn.com.kell.vaanh.interator.product.GetProductDetailUseCase
+import vn.com.kell.vaanh.interator.product.GetProductOfBrandUseCase
+import vn.com.kell.vaanh.interator.product.GetProductUseCase
 import vn.com.kell.vaanh.model.Image
 import vn.com.kell.vaanh.model.ProductDTO
 import vn.com.kell.vaanh.model.ProductDetailDTO

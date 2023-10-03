@@ -1,4 +1,4 @@
-package vn.com.kell.vaanh.interator
+package vn.com.kell.vaanh.interator.user
 
 import dagger.hilt.android.scopes.ViewModelScoped
 import vn.com.kell.vaanh.model.AccountProfile

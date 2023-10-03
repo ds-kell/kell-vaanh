@@ -4,7 +4,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import vn.com.kell.vaanh.common.VaViewModel
-import vn.com.kell.vaanh.interator.GetAccountProfileUseCase
+import vn.com.kell.vaanh.interator.user.GetAccountProfileUseCase
 import vn.com.kell.vaanh.model.AccountProfile
 import javax.inject.Inject
 
