@@ -75,4 +75,5 @@
     <string name="label_check_out">Check out</string>
     <string name="label_select_all">Select all</string>
     <string name="label_total">Total(%d item):</string>
+    <string name="label_dashboard">Dash board</string>
 </resources>

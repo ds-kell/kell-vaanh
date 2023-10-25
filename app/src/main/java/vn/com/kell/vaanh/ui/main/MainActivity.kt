@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             R.id.fragment_home,
             R.id.fragment_cart,
             R.id.fragment_user_profile,
+            R.id.fragment_dashboard
         )
     }
 

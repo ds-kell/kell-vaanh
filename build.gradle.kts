@@ -7,10 +7,10 @@ plugins {
 buildscript {
     val hiltVersion by extra { "2.47" }
     val navVersion by extra { "2.6.0" }
+    val googleServices by extra { "4.4.0" }
     dependencies {
         classpath("com.google.dagger:hilt-android-gradle-plugin:$hiltVersion")
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$navVersion")
-        classpath("com.google.gms:google-services:4.3.15")
+        classpath("com.google.gms:google-services:$googleServices")
     }
-
 }

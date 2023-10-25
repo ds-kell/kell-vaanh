@@ -27,6 +27,10 @@
         android:id="@+id/fragment_cart"
         android:name="vn.com.kell.vaanh.ui.cart.CartFragment"
         tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/fragment_dashboard"
+        android:name="vn.com.kell.vaanh.ui.dashboard.DashBoardFragment"
+        tools:layout="@layout/fragment_dash_board" />
     <action
         android:id="@+id/to_fragment_product_detail"
         app:destination="@+id/fragment_product_detail" />

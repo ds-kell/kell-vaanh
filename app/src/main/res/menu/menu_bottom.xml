@@ -5,20 +5,25 @@
         android:id="@+id/fragment_home"
         android:icon="@drawable/ic_home"
         android:title="@string/label_home"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/fragment_cart"
         android:icon="@drawable/ic_cart"
         android:title="@string/label_cart"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/fragment_notification"
         android:icon="@drawable/ic_notifications"
         android:title="@string/label_notification"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/fragment_dashboard"
+        android:icon="@drawable/ic_account_circle"
+        android:title="@string/label_dashboard"
+        app:showAsAction="always" />
     <item
         android:id="@+id/fragment_user_profile"
         android:icon="@drawable/ic_account_circle"
         android:title="@string/label_account"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 </menu>
