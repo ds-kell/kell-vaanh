@@ -148,13 +148,13 @@ class DashBoardFragment : Fragment() {
         val entries2 = ArrayList<BarEntry>()
 
         for (index in 0 until count) {
-            entries1.add(BarEntry(0f, Random.nextInt(5, 25).toFloat()))
+            entries1.add(BarEntry(0f, Random.nextInt(5, 50).toFloat()))
 
             // stacked
             entries2.add(
                 BarEntry(
                     0f,
-                    floatArrayOf(Random.nextInt(8, 15).toFloat(), Random.nextInt(8, 15).toFloat())
+                    floatArrayOf(Random.nextInt(8, 30).toFloat(), Random.nextInt(8, 30).toFloat())
                 )
             )
         }

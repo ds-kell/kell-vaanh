@@ -25,8 +25,13 @@
         tools:layout="@layout/fragment_account_profile" />
     <fragment
         android:id="@+id/fragment_cart"
-        android:name="vn.com.kell.vaanh.ui.cart.CartFragment"
+        android:name="vn.com.kell.vaanh.ui.tmp.TmpFragment"
         tools:layout="@layout/fragment_cart" />
+
+    <fragment
+        android:id="@+id/fragment_tmp"
+        android:name="vn.com.kell.vaanh.ui.cart.CartFragment"
+        tools:layout="@layout/fragment_tmp" />
     <fragment
         android:id="@+id/fragment_dashboard"
         android:name="vn.com.kell.vaanh.ui.dashboard.DashBoardFragment"
